@@ -11,6 +11,11 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'reg-screen00',
+    loadChildren: () => import('./pages/reg-screen00/reg-screen00.module').then( m => m.RegScreen00PageModule)
+  },
+
 ];
 
 @NgModule({
