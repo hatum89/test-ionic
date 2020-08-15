@@ -1,0 +1,13 @@
+import { Injectable } from '@angular/core';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class EncryptDecryptService {
+
+  constructor() { }
+
+  encrypt(serializedJson: string, key: string) {
+    // const toEncryptedArray = enc.
+  }
+}
