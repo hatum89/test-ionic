@@ -21,6 +21,8 @@ export class SignupV2Service {
       last_names: 'HATUM VARELA',
       document_id: '1',
       document_number: '1082897799',
+      document_type: '2',//
+      dateTime_ExpedicionDate: '',//
       document_expiration_date: '????????',
       birth_date: '??????',
       gender_id: '1',
