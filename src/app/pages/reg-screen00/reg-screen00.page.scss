@@ -16,7 +16,7 @@ ion-toolbar {
 .text-alcancia .ion-text-center {
   font-family: 'Montserrat';
   font-weight: bold;
-  color: #1EEA00;
+  color: var(--ion-color-ligthGreen);
   text-align: center;
   margin-top: 5%;
   font-size: 18px;
@@ -31,7 +31,7 @@ ion-toolbar {
   width: 9.56px;
   height: 9.56px;
   border-radius: 5.96px 5.96px 5.96px 5.96px ;
-  background: #004B40;
+  background: var(--ion-color-darkGreen);
   margin-left: 30%;
   margin-top: 4%;
 }
@@ -99,7 +99,7 @@ ion-toolbar {
   justify-content: center;
   margin-top: 87px;
   margin-left: 13px;
-  background-color: #1EEA00;
+  background-color: var(--ion-color-ligthGreen);
   border-radius: 40px 40px 40px 40px;
   width: 388px;
   height: 55px;
@@ -108,14 +108,14 @@ ion-toolbar {
   font-family: 'Montserrat', sans-serif;
   margin-top: 20px;
   font-size: 16px;
-  color: #004B40;
+  color: var(--ion-color-darkGreen);
 }
 .get-into {
   display: flex;
   justify-content: center;
   margin-top: 6px;
   margin-left: 13px;
-  background-color: #004B40;
+  background-color: var(--ion-color-darkGreen);
   border-radius: 40px 40px 40px 40px;
   width: 388px;
   height: 55px;

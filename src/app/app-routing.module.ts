@@ -15,6 +15,10 @@ const routes: Routes = [
     path: 'reg-screen00',
     loadChildren: () => import('./pages/reg-screen00/reg-screen00.module').then( m => m.RegScreen00PageModule)
   },
+  {
+    path: 'reg-num-cel',
+    loadChildren: () => import('./pages/reg-num-cel/reg-num-cel.module').then( m => m.RegNumCelPageModule)
+  },
 
 ];
 

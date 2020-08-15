@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {NavController} from '@ionic/angular';
 
 @Component({
   selector: 'app-reg-screen00',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegScreen00Page implements OnInit {
 
-  constructor() { }
+  constructor( public nav: NavController) { }
 
   ngOnInit() {
   }
-
+  goRegister(){
+    this.nav.navigateRoot('reg-num-cel').then();
+  }
 }
