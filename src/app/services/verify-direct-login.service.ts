@@ -18,13 +18,14 @@ export class VerifyDirectLoginService {
     console.log(url);
     const data = {phone_number: '573112222222', imei: '7AD0E1F1-521E-43E6-B267-62D10CDEEC79'};
     const serializedJson = JSON.stringify(data);
+    console.log('serializedJson',serializedJson);
     const test = this.encryptDecryptService.encrypt(serializedJson, environment.key);
     console.log(test);
 
     const payload = {
       payload: 'ECrk5B8a7VVsZGYxZ8CZSV93wdrbrX0t1ClmLtOiHroev+779sEPsBGa0D1H7Kn8SeF/x2+o61CCiYrtI+59trHdfcK32zEMHdAYjSZQZsI='
     };
-    console.log(payload.payload);
+    console.log(payload);
     this.httpClient.post(url, payload)
         .subscribe( response => {
           console.log(response);

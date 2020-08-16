@@ -14,8 +14,8 @@ export class HomePage {
   constructor( public nav: NavController,
                private verifyDirectLoginService: VerifyDirectLoginService) {
     this.verifyDirectLoginService.getLogin();
-    // setTimeout (() => {
-    //  nav.navigateRoot('/reg-screen00').then();
-    // }, 3000);
+    setTimeout (() => {
+     nav.navigateRoot('/reg-screen00').then();
+    }, 3000);
   }
 }
