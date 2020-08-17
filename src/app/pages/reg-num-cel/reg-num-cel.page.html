@@ -24,9 +24,9 @@
                                 <ion-img class="oink" src="./assets/img/Oink.svg"></ion-img>
                         </ion-col>
                         <ion-col  class="col-text">
-                                        <ion-text class="text">Para comenzar, por favor </ion-text>
-                                        <br>
-                                        <ion-text class="text">ingresa <strong>tu número celular.</strong> </ion-text>
+                                <ion-text class="text">Para comenzar, por favor </ion-text>
+                                <br>
+                                <ion-text class="text">ingresa <strong>tu número celular.</strong> </ion-text>
                         </ion-col>
                 </ion-row>
         </ion-grid>
@@ -34,39 +34,99 @@
 <hr class="line-green">
 
 <ion-content>
-<ion-card class="card-center">
-        <ion-grid>
-                <ion-row>
-                        <ion-col style="display: flex; padding-top: 16px">
-                                <ion-img class="bandera" src="./assets/img/Bandera@2x.png"></ion-img>
-                                <ion-text
-                                style="margin-left: 15px;
+        <ion-card class="card-center">
+                <ion-grid>
+                        <ion-row>
+                                <ion-col style="display: flex; padding-top: 16px">
+                                        <ion-img class="bandera" src="./assets/img/Bandera@2x.png"></ion-img>
+                                        <ion-text
+                                                style="margin-left: 15px;
                                 padding-right: 6px;
                                 font-family: 'Roboto Light', Regular;
                                 font-weight: bold;
                                 margin-top: 2px">+57
-                                </ion-text>
-                                <span class="span-parentesis">(</span>
-                                <ion-grid>
-                                        <ion-row>
-                                                <ion-col size="3">
-                                                        <ion-input type="number" style="margin-top: -10px;margin-left: 8px;" placeholder=" X X X "></ion-input>
-                                                </ion-col>
-                                                <ion-col size="4">
-                                                        <ion-input type="number" style="margin-top: -10px;margin-left: 0px;" placeholder="  X X X X X X X">-</ion-input>
-                                                </ion-col>
-                                                <ion-col size="5">
-                                                        <span class="span-parentesis">)</span>
-                                                </ion-col>
-                                        </ion-row>
-                                </ion-grid>
+                                        </ion-text>
+                                        <span class="span-parentesis">(</span>
+                                        <ion-grid>
+                                                <form [formGroup]="form" (ngSubmit)="num()">
+                                                        <div style="display: flex">
+                                                                <div style="width: 50px">
+                                                                        <ion-input type="number" formControlName="firsNumPart" style="margin-top: -10px;margin-left: 2px;" autofocus="autofocus" placeholder=" X X X "></ion-input>
+                                                                </div>
+                                                                <div style="display: flex; width: 110px;">
+                                                                        <ion-input type="number" formControlName="secondNumPart" style="margin-top: -10px;" autofocus="autofocus" placeholder="  X X X X X X ">-</ion-input>
+                                                                </div>
+                                                                <div style="margin-left: -16px">
+                                                                        <span class="span-parentesis">)</span>
+                                                                </div>
+                                                        </div>
 
 
-                        </ion-col>
-                </ion-row>
 
-        </ion-grid>
+                                                </form>
 
-</ion-card>
+                                        </ion-grid>
 
+
+                                </ion-col>
+                        </ion-row>
+
+                </ion-grid>
+
+        </ion-card>
+
+        <div>
+                <ion-list class="listN1" style="display: flex; justify-content: center; margin-right: -116px;">
+
+                                <span class="textNum"><h1 style="margin-left: -128px">1</h1></span>
+
+
+                                <span class="textNum"><h1>2</h1></span>
+
+
+                                <span class="textNum"><h1 style="margin-left: 108px">3</h1></span>
+
+                </ion-list>
+                <ion-list class="listN1" style="display: flex; justify-content: center; margin-right: -116px;">
+
+                        <span class="textNum"><h1 style="margin-left: -128px">4</h1></span>
+
+
+                        <span class="textNum"><h1>5</h1></span>
+
+
+                        <span class="textNum"><h1 style="margin-left: 108px">6</h1></span>
+
+                </ion-list>
+                <ion-list class="listN1" style="display: flex; justify-content: center; margin-right: -116px;">
+
+                        <span class="textNum"><h1 style="margin-left: -128px">7</h1></span>
+
+
+                        <span class="textNum"><h1>8</h1></span>
+
+
+                        <span class="textNum"><h1 style="margin-left: 108px">9</h1></span>
+
+                </ion-list>
+                <ion-list class="listN1" style="display: flex; justify-content: center; margin-right: -116px;">
+
+                        <span class="textNum"><h1 style="margin-left: -128px">
+                                <ion-img style="width: 49px;margin-left: 6px;"
+                                         src="./assets/img/borrar_teclado.svg"></ion-img>
+                        </h1></span>
+
+
+                        <span style="margin-right: -35px; padding: 0 20px" class="textNum"><h1>0</h1></span>
+
+
+                        <span class="textNum"><h1 style="margin-left: 108px">
+                                <ion-img style="width: 51px;margin-top: -10px;"
+                                         src="./assets/img/Check_unable.svg">
+
+                                </ion-img></h1></span>
+
+                </ion-list>
+
+        </div>
 </ion-content>
