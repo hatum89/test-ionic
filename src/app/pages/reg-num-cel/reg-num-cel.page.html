@@ -48,13 +48,14 @@
                                         </ion-text>
                                         <span class="span-parentesis">(</span>
                                         <ion-grid>
-                                                <form [formGroup]="form" (ngSubmit)="num()">
+                                                <form [formGroup]="form" (ngSubmit)="numAccess()">
                                                         <div style="display: flex">
                                                                 <div style="width: 50px">
-                                                                        <ion-input type="number" formControlName="firsNumPart" style="margin-top: -10px;margin-left: 2px;" autofocus="autofocus" placeholder=" X X X "></ion-input>
+                                                                        <ion-input type="number" [(ngModel)]="number" formControlName="firsNumPart" style="margin-top: -10px;margin-left: 2px;" placeholder=" X X X "></ion-input>
                                                                 </div>
-                                                                <div style="display: flex; width: 110px;">
-                                                                        <ion-input type="number" formControlName="secondNumPart" style="margin-top: -10px;" autofocus="autofocus" placeholder="  X X X X X X ">-</ion-input>
+                                                                <span class="span-parentesis">-</span>
+                                                                <div style="display: flex; width: 110px; margin-left: 3px">
+                                                                        <ion-input type="number" [(ngModel)]="number2" formControlName="secondNumPart" style="margin-top: -10px;"  placeholder="  X X X X X X "></ion-input>
                                                                 </div>
                                                                 <div style="margin-left: -16px">
                                                                         <span class="span-parentesis">)</span>
@@ -78,53 +79,58 @@
         <div>
                 <ion-list class="listN1" style="display: flex; justify-content: center; margin-right: -116px;">
 
-                                <span class="textNum"><h1 style="margin-left: -128px">1</h1></span>
+                                <span class="textNum"><h1 style="margin-left: -128px" (click)="num1()">1</h1></span>
 
 
-                                <span class="textNum"><h1>2</h1></span>
+                                <span class="textNum"><h1 (click)="num2()">2</h1></span>
 
 
-                                <span class="textNum"><h1 style="margin-left: 108px">3</h1></span>
-
-                </ion-list>
-                <ion-list class="listN1" style="display: flex; justify-content: center; margin-right: -116px;">
-
-                        <span class="textNum"><h1 style="margin-left: -128px">4</h1></span>
-
-
-                        <span class="textNum"><h1>5</h1></span>
-
-
-                        <span class="textNum"><h1 style="margin-left: 108px">6</h1></span>
+                                <span class="textNum"><h1 style="margin-left: 108px" (click)="num3()">3</h1></span>
 
                 </ion-list>
                 <ion-list class="listN1" style="display: flex; justify-content: center; margin-right: -116px;">
 
-                        <span class="textNum"><h1 style="margin-left: -128px">7</h1></span>
+                        <span class="textNum"><h1 style="margin-left: -128px" (click)="num4()">4</h1></span>
 
 
-                        <span class="textNum"><h1>8</h1></span>
+                        <span class="textNum"><h1 (click)="num5()">5</h1></span>
 
 
-                        <span class="textNum"><h1 style="margin-left: 108px">9</h1></span>
+                        <span class="textNum"><h1 (click)="num6()" style="margin-left: 108px">6</h1></span>
 
                 </ion-list>
                 <ion-list class="listN1" style="display: flex; justify-content: center; margin-right: -116px;">
 
-                        <span class="textNum"><h1 style="margin-left: -128px">
-                                <ion-img style="width: 49px;margin-left: 6px;"
-                                         src="./assets/img/borrar_teclado.svg"></ion-img>
-                        </h1></span>
+                        <span class="textNum"><h1 (click)="num7()" style="margin-left: -128px">7</h1></span>
 
 
-                        <span style="margin-right: -35px; padding: 0 20px" class="textNum"><h1>0</h1></span>
+                        <span class="textNum"><h1 (click)="num8()">8</h1></span>
 
 
-                        <span class="textNum"><h1 style="margin-left: 108px">
-                                <ion-img style="width: 51px;margin-top: -10px;"
-                                         src="./assets/img/Check_unable.svg">
+                        <span class="textNum"><h1 style="margin-left: 108px" (click)="num9()">9</h1></span>
 
-                                </ion-img></h1></span>
+                </ion-list>
+                <ion-list class="listN1" style="display: flex; justify-content: center; margin-right: -116px;">
+                        <div style="width: 20px">
+
+                                <ion-img style="width: 49px;margin-left: -185px;"
+                                         src="./assets/img/borrar_teclado.svg"
+                                         (click)="numEraser()"></ion-img>
+
+                        </div>
+
+                        <div style="width: 20px">
+                             <h1 class="textNum" style="margin-left: -59px;" (click)="num0()">0</h1>
+                        </div>
+                        <div style="width: 20px">
+
+                                <ion-img style="width: 51px;margin-top: -10px; margin-left: 28px"
+                                         src="./assets/img/Check_unable.svg"
+                                         (click)="numAccess()">
+
+                                </ion-img>
+
+                        </div>
 
                 </ion-list>
 
