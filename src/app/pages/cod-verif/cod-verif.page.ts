@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {NavController} from '@ionic/angular';
+import {UserModel} from '../../models/user.model';
 
 @Component({
   selector: 'app-cod-verif',
@@ -14,6 +15,7 @@ export class CodVerifPage implements OnInit {
   number2: string = '';
   number3: string = '';
   number4: string = '';
+  user: UserModel = new UserModel();
 
   constructor( private formBuilder: FormBuilder,
                private navController: NavController) {
@@ -45,8 +47,8 @@ export class CodVerifPage implements OnInit {
   }
 
   ngOnInit() {
-    // this.number = localStorage.getItem('number');
-    // this.number2 = localStorage.getItem('number2');
+    const user = localStorage.getItem('user');
+    this.user.set(JSON.parse(user));
   }
 
   num1() {
@@ -181,7 +183,10 @@ export class CodVerifPage implements OnInit {
   numAccess() {
     console.log('form', this.form.get('firsNumPart').value + this.form.get('secondNumPart').value + this.form.get('thirdNumPart').value + this.form.get('quarterNumPart').value);
     if (this.form.get('secondNumPart').value.length >= 1 && this.form.get('firsNumPart').value.length >= 1 && this.form.get('thirdNumPart').value >= 1 && this.form.get('quarterNumPart').value >= 1 ){
-      this.navController.navigateRoot('info-gen').then();
+      const pin = this.form.get('firsNumPart').value + this.form.get('secondNumPart').value + this.form.get('thirdNumPart').value + this.form.get('quarterNumPart').value;
+      this.user.setPin(pin);
+      localStorage.setItem('user', JSON.stringify(this.user));
+      this.navController.navigateRoot('/info-gen').then();
     }
   }
 }

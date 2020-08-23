@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
 <ion-card class="card-header">
 
   <ion-img routerLink="/verifi-datos" class="Back_icon" src="./assets/img/Back_icon.svg"></ion-img>
@@ -38,7 +40,7 @@
   </ion-grid>
 </div>
 <ion-content>
-  <form [formGroup]="user" (ngSubmit)="continue()">
+  <form [formGroup]="userForm" (ngSubmit)="continue()">
     <ion-item>
       <ion-label style="color:#AAAAAA" position="floating">Correo electronico</ion-label>
       <ion-input style="color: #004B40"  formControlName="email"></ion-input>
@@ -49,18 +51,45 @@
     </ion-item>
     <ion-item>
       <ion-label style="color:#AAAAAA" position="floating">Pin de seguridad</ion-label>
-      <ion-input style="color: #004B40"  formControlName="pin"></ion-input>
+      <ion-input type="number" style="color: #004B40"  formControlName="pin"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label style="color:#AAAAAA" position="floating">Confirmar Pin de seguridad</ion-label>
-      <ion-input style="color: #004B40"  formControlName="confirmPin"></ion-input>
+      <ion-input type="number" style="color: #004B40"  formControlName="confirmPin"></ion-input>
     </ion-item>
 
-      <div class="get-into" (click)="continue()">
-        <span class="get-into-text">Siguiente</span>
-      </div>
+    <div class="get-into" (click)="continue()">
+      <span class="get-into-text">Siguiente</span>
+    </div>
 
 
   </form>
 
 </ion-content>
+<div class="w3-container">
+
+  <button id="modal1" style="visibility: hidden" onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black">Fade In Modal</button>
+
+  <div id="id01" class="w3-modal w3-animate-opacity" >
+    <div class="w3-modal-content w3-card-4"
+         style="margin-top: 275px;width: 319px !important; height: 165px; margin-left: 48px; border-radius: 4px">
+      <div>
+
+        <div class="w3-container" style="padding-top: 14px;">
+          <span style="color: #F44336; font-size: 20px; padding: 22px; margin-left: -29px">Error</span><br>
+          <div style="padding-top: 8px">
+            <ion-text>El E-mail <strong>yo123@hotmail.com</strong> ya </ion-text>
+            <ion-text>está <br>asociado a otro usuario.</ion-text>
+          </div>
+
+        </div>
+        <div class="w3-container">
+          <ion-text style="color: #004B40; margin-left: 198px; margin-bottom: 30px; font-weight: bold;"
+                    onclick="document.getElementById('id01').style.display='none'"
+                    >VOLVER</ion-text>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

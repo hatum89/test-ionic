@@ -1,5 +1,5 @@
 
-export class InfoModels {
+export class UserModel {
 
     private phone_number: number;
     private names: string;
@@ -51,6 +51,30 @@ export class InfoModels {
 
     }
 
+    public set(user: UserModel) {
+        this.address = user.address;
+        this.birth_date = user.birth_date;
+        this.bool = user.bool;
+        this.city_id = user.city_id;
+        this.dateTime_ExpedicionDate = user.dateTime_ExpedicionDate;
+        this.document_expiration_date = user.document_expiration_date;
+        this.document_id = user.document_id;
+        this.document_number = user.document_number;
+        this.email = user.email;
+        this.gender = user.gender;
+        this.gender_id = user.gender_id;
+        this.imei = user.imei;
+        this.last_names = user.last_names;
+        this.names = user.names;
+        this.parent_info = user.parent_info;
+        this.phone_number = user.phone_number;
+        this.pin = user.pin;
+        this.push_registration_id = user.push_registration_id;
+        this.query_id = user.query_id;
+        this.referrer_phonenumber = user.referrer_phonenumber;
+        this.state_id = user.state_id;
+        this.topic_registration_id = user.topic_registration_id;
+    }
 
 
     public getPhoneNumber () {

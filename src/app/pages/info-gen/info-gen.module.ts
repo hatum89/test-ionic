@@ -7,7 +7,6 @@ import { IonicModule } from '@ionic/angular';
 import { InfoGenPageRoutingModule } from './info-gen-routing.module';
 
 import { InfoGenPage } from './info-gen.page';
-import {SelectComponent} from '../../components/select/select/select.component';
 
 @NgModule({
     imports: [
@@ -17,6 +16,6 @@ import {SelectComponent} from '../../components/select/select/select.component';
         InfoGenPageRoutingModule,
         ReactiveFormsModule
     ],
-    declarations: [InfoGenPage, SelectComponent]
+    declarations: [InfoGenPage]
 })
 export class InfoGenPageModule {}

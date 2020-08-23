@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {NavController} from '@ionic/angular';
+import {UserModel} from '../../models/user.model';
 
 @Component({
   selector: 'app-segur',
@@ -10,18 +11,21 @@ import {NavController} from '@ionic/angular';
 export class SegurPage implements OnInit {
 
   show: any;
-  user: FormGroup;
+  userForm: FormGroup;
+  user: UserModel = new UserModel();
 
   constructor(private formBuilder: FormBuilder,
               private navController: NavController) {
     this.show = false;
-    this.user = this.formBuilder.group({
+    this.userForm = this.formBuilder.group({
 
       email: ['', Validators.compose([
-        Validators.required
+        Validators.required,
+        Validators.email
       ])],
       confirmEmail : ['', Validators.compose([
-        Validators.required
+        Validators.required,
+        Validators.email
       ])],
       pin: ['', Validators.compose([
         Validators.required
@@ -36,7 +40,17 @@ export class SegurPage implements OnInit {
   }
 
   continue() {
-    this.navController.navigateRoot('temi-condi').then()
+    if(this.userForm.get('email').value === 'yo123@hotmail.com'){
+      document.getElementById('modal1').click();
+    } else {
+      this.user.setEmail(this.userForm.get('email').value);
+      this.user.setEmail(this.userForm.get('confirmEmail').value);
+      this.user.setPin(this.userForm.get('pin').value);
+      this.user.setPin(this.userForm.get('confirmPin').value);
+      localStorage.setItem('user', JSON.stringify(this.user));
+      console.log(this.user);
+      this.navController.navigateRoot('temi-condi').then()
+    }
   }
 
 }

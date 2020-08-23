@@ -38,61 +38,78 @@
 </div>
 <ion-content>
 
-  <form [formGroup]="user" (ngSubmit)="continue()">
+  <form [formGroup]="userForm" (ngSubmit)="continue()">
     <ion-card style="width: 406px; box-shadow: none">
 
-<ion-item >
-    <div class="div-select" [style]="(show)? 'height: 38px': 'height: 121px'">
-      <ion-grid>
-        <ion-row>
-          <ion-col>
-            <ion-text (click)="show =! show" class="tex-document" [style]="(show)? 'font-size: 16px': 'font-size: 20px'">
-              {{ selectedOption ?  selectedOption : 'Tipo de documento' }}</ion-text>
-          </ion-col>
-          <ion-col style="margin-top: -22px;margin-right: 33px; margin-left: -2px;" (click)="show =! show">
-            <ion-icon class="icon" style="color: #757575" src="./assets/img/drop-down-arrow.svg"></ion-icon>
-          </ion-col>
-        </ion-row>
-        <hr [hidden]="show" style="background-color: #B6B6B6; width:400px; height: 1px">
-      </ion-grid>
+      <ion-item >
+        <div class="div-select" >
+          <ion-grid>
+            <ion-row>
+              <ion-col>
+                <ion-text  (click)="show = !show" class="tex-document" [style]="(show)? 'font-size: 16px': 'font-size: 20px'">
+                  {{ selectedOption ?  selectedOption : 'Tipo de documento' }}</ion-text>
+              </ion-col>
+              <ion-col style="margin-top: -22px;margin-right: 33px; margin-left: -2px;" (click)="show = !show">
+                <ion-icon class="icon" style="color: #757575" src="./assets/img/drop-down-arrow.svg"></ion-icon>
+              </ion-col>
+            </ion-row>
+            <hr [hidden]="show" style="background-color: #B6B6B6; width:400px; height: 1px">
+          </ion-grid>
+          <div style="display: flex; flex-direction: column;margin-left: 16px;margin-top: 10px;" *ngIf="show">
+            <ion-text class="dni-text" *ngFor="let dni of optionsDni" (click)="selectOption(dni)">
+              {{dni}}
+            </ion-text>
+          </div>
+        </div>
 
-      <div style="display: flex; flex-direction: column;margin-left: 16px;margin-top: 10px;">
-        <ion-text class="dni-text" *ngFor="let dni of optionsDni" (click)="selectOption(dni)">
-          {{dni}}
-        </ion-text>
-      </div>
-    </div>
+      </ion-item>
+      <ion-item>
+        <ion-label style="color:#AAAAAA" position="floating">Número de documento</ion-label>
+        <ion-input formControlName="documentNumber"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label style="color:#AAAAAA" position="floating">Fecha de nacimiento</ion-label>
+        <ion-input placeholder="1989-06-18" formControlName="dateBorn"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label style="color:#AAAAAA" position="floating">Fecha de expedición del documento</ion-label>
+        <ion-input placeholder="2000-06-18" formControlName="dateExpedition"></ion-input>
+      </ion-item>
+      <ion-item >
+        <div class="div-select" >
+          <ion-grid>
+            <ion-row>
+              <ion-col>
+                <ion-text  (click)="show2 = !show2" class="tex-document" [style]="(show2)? 'font-size: 14px': 'font-size: 15px'">
+                  {{ genderOptions ? genderOptions : 'Género que aparece en tu documento de identidad' }}</ion-text>
+              </ion-col>
+              <ion-col style="margin-top: -22px;margin-right: 33px; margin-left: -2px;" (click)="show2 = !show2">
+                <ion-icon class="icon" style="color: #757575" src="./assets/img/drop-down-arrow.svg"></ion-icon>
+              </ion-col>
+            </ion-row>
+            <hr [hidden]="show2" style="background-color: #B6B6B6; width:400px; height: 1px">
+          </ion-grid>
+          <div style="display: flex; flex-direction: column;margin-left: 16px;margin-top: 10px;" *ngIf="show2">
+            <ion-text class="dni-text" *ngFor="let gender of options" (click)="selectGender(gender)">
+              {{gender}}
+            </ion-text>
+          </div>
+        </div>
 
-  </ion-item>
-    <ion-item>
-      <ion-label style="color:#AAAAAA" position="floating">Número de documento</ion-label>
-      <ion-input formControlName="documentNumber"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label style="color:#AAAAAA" position="floating">Fecha de nacimiento</ion-label>
-      <ion-input formControlName="dateBorn"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label style="color:#AAAAAA" position="floating">Fecha de expedición del documento</ion-label>
-      <ion-input formControlName="dateExpedition"></ion-input>
-    </ion-item>
+      </ion-item>
 
-
-    <app-select></app-select>
-
-
-    <div class="get-into" (click)="continue()">
-      <span class="get-into-text">Continuar</span>
-    </div>
+      <button class="get-into" (click)="continue()">
+        <span class="get-into-text">Continuar</span>
+      </button>
     </ion-card>
   </form>
 
 
 </ion-content >
 
-<div class="w3-container">
+<div class="w3-container" style="margin:-60px">
 
-  <button id="modal1" onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black">Fade In Modal</button>
+  <button id="modal1" style="visibility: hidden" onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black">Fade In Modal</button>
 
   <div id="id01" class="w3-modal w3-animate-opacity" >
     <div class="w3-modal-content w3-card-4"
@@ -108,10 +125,64 @@
           </div>
 
         </div>
-        <div class="w3-container">
+        <div class="w3-container" style="margin-top: 20px">
           <ion-text style="color: #004B40; margin-left: 198px; margin-bottom: 30px; font-weight: bold;"
                     onclick="document.getElementById('id01').style.display='none'"
                     >VOLVER</ion-text>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="w3-container">
+
+  <button id="modal2" style="visibility: hidden" onclick="document.getElementById('id0').style.display='block'" class="w3-button w3-black">Fade In Modal</button>
+
+  <div id="id0" class="w3-modal w3-animate-opacity" >
+    <div class="w3-modal-content w3-card-4"
+         style="margin-top: 275px;width: 319px !important; height: 165px; margin-left: 48px; border-radius: 4px">
+      <div>
+
+        <div class="w3-container" style="padding-top: 14px;">
+          <span style="color: #F44336; font-size: 20px; padding: 22px; margin-left: -29px">Error de conexión</span><br>
+
+          <div style="padding-top: 8px">
+            <ion-text>Revisa tu conexión a internet e intenta de</ion-text><br>
+            <ion-text>nuevo</ion-text>
+          </div>
+
+        </div>
+        <div class="w3-container" style="margin-top: 20px">
+          <ion-text style="color: #004B40; margin-left: 198px; margin-bottom: 30px; font-weight: bold;"
+                    onclick="document.getElementById('id0').style.display='none'"
+          >VOLVER</ion-text>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="w3-container">
+
+  <button id="modal3" style="visibility: hidden" onclick="document.getElementById('id3').style.display='block'" class="w3-button w3-black">Fade In Modal</button>
+
+  <div id="id3" class="w3-modal w3-animate-opacity" >
+    <div class="w3-modal-content w3-card-4"
+         style="margin-top: 275px;width: 319px !important; height: 165px; margin-left: 48px; border-radius: 4px">
+      <div>
+
+        <div class="w3-container" style="padding-top: 14px;">
+          <span style="color: #F44336; font-size: 20px; padding: 22px; margin-left: -29px">Algo pasa</span><br>
+
+          <div style="padding-top: 8px">
+            <ion-text>Los datos que pusiste no coinciden,</ion-text><br>
+            <ion-text>revisa y vuelve a intentarlo</ion-text>
+          </div>
+
+        </div>
+        <div class="w3-container" style="margin-top: 20px">
+          <ion-text style="color: #004B40; margin-left: 198px; margin-bottom: 30px; font-weight: bold;"
+                    onclick="document.getElementById('id3').style.display='none'"
+          >VOLVER</ion-text>
         </div>
       </div>
     </div>

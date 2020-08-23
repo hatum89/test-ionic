@@ -1,3 +1,4 @@
+
 <ion-card class="card-header">
 
   <ion-img routerLink="/reg-num-cel" class="Back_icon" src="./assets/img/Back_icon.svg"></ion-img>
@@ -12,8 +13,6 @@
     <ion-img class="disabled-step" src="./assets/img/Paso_Desactivo.svg"></ion-img>
 
   </div>
-
-
 </ion-card>
 
 <div class="oink-div">
@@ -34,7 +33,7 @@
 <hr class="line-green">
 
 
-<ion-card class="card-center" style="margin-top: 20px">
+<ion-card class="card-center" style="margin-top: -1px">
   <form [formGroup]="form" (ngSubmit)="numAccess()">
       <div style="display: flex; width: 100px; margin-left: 162px;">
         <ion-input [(ngModel)]="number" formControlName="firsNumPart" class="styleX" style="margin-right: -90px;" placeholder="X">
@@ -116,5 +115,6 @@
     </div>
 
   </ion-list>
-
 </div>
+
+

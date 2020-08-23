@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {NavController} from '@ionic/angular';
+import {UserModel} from '../../models/user.model';
 
 @Component({
   selector: 'app-reg-num-component',
@@ -11,6 +12,7 @@ export class RegNumComponentPage implements OnInit {
   form: FormGroup;
   @Input()number: string = '';
   @Input()number2: string = '';
+  user: UserModel = new UserModel();
   constructor( private formBuilder: FormBuilder,
                private navController: NavController) {
     this.form = this.formBuilder.group({
@@ -154,8 +156,9 @@ export class RegNumComponentPage implements OnInit {
       document.getElementById('modal1').click();
     } else {
       if (this.form.get('secondNumPart').value.length === 7 && this.form.get('firsNumPart').value.length === 3) {
-        localStorage.setItem('numero',this.number);
-        localStorage.setItem('numero2',this.number2);
+        this.user.setPhoneNumber(this.number+this.number2);
+        console.log(JSON.stringify(this.user));
+        localStorage.setItem('user', JSON.stringify(this.user));
         this.navController.navigateRoot('/cod-verif').then();
       }
     }
