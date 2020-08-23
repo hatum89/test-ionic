@@ -37,6 +37,8 @@ export class SegurPage implements OnInit {
   }
 
   ngOnInit() {
+    const user = localStorage.getItem('user');
+    this.user.set(JSON.parse(user));
   }
 
   continue() {
@@ -44,9 +46,7 @@ export class SegurPage implements OnInit {
       document.getElementById('modal1').click();
     } else {
       this.user.setEmail(this.userForm.get('email').value);
-      this.user.setEmail(this.userForm.get('confirmEmail').value);
       this.user.setPin(this.userForm.get('pin').value);
-      this.user.setPin(this.userForm.get('confirmPin').value);
       localStorage.setItem('user', JSON.stringify(this.user));
       console.log(this.user);
       this.navController.navigateRoot('temi-condi').then()

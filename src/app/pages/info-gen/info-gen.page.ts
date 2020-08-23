@@ -10,7 +10,8 @@ import {UserModel} from '../../models/user.model';
 })
 export class InfoGenPage implements OnInit {
 
-
+    dni2: string = null;
+    gender2: string = null;
     selectedOption: string = null;
     genderOptions: string = null;
     options: string[] = [
@@ -31,9 +32,7 @@ export class InfoGenPage implements OnInit {
                 private navController: NavController) {
         this.show = false;
         this.userForm = this.formBuilder.group({
-            kindDocument: [this.optionsDni[0],Validators.compose([ //no pude tomar los datos!!
-                Validators.required
-            ])],
+
             documentNumber: ['', Validators.compose([
                 Validators.required
             ])],
@@ -42,10 +41,7 @@ export class InfoGenPage implements OnInit {
             ])],
             dateExpedition: ['', Validators.compose([
                 Validators.required
-            ])],
-            kindGender: [this.options[0],Validators.compose([
-                Validators.required
-            ])],
+            ])]
         });
     }
 
@@ -56,22 +52,39 @@ export class InfoGenPage implements OnInit {
     }
 
     continue() {
+        this.dni2 = this.selectedOption;
+        this.gender2 = this.genderOptions;
+        console.log(this.dni2);
+
+        if(this.dni2 === 'Cédula de ciudadanía'){
+            this.user.setDocumentId(1);
+        }else {
+            this.user.setDocumentId(2);
+        }
+        if(this.gender2 === 'Masculino'){
+            this.user.setGender_Id(1);
+        }else {
+            this.user.setGender_Id(2);
+        }
+
+
         if(this.userForm.get('documentNumber').value === '80186587'){
-            // document.getElementById('modal1').click();
+            document.getElementById('modal1').click();
             // document.getElementById('modal2').click(); //error de conexión de internet
-            document.getElementById('modal3').click(); //algo pasa
+            // document.getElementById('modal3').click(); //algo pasa
         } else {
-            this.user.setDocument_type(this.userForm.get('kindDocument').value);
+            this.user.setDocument_type(this.dni2);
             this.user.setDocument_number(this.userForm.get('documentNumber').value);
             this.user.setDateTime_BirthDate(this.userForm.get('dateBorn').value);
             this.user.setDateTime_ExpedicionDate(this.userForm.get('dateExpedition').value);
-            this.user.setGender_Gender(this.userForm.get('kindGender').value);
+            this.user.setGender_Gender(this.gender2);
             localStorage.setItem('user', JSON.stringify(this.user));
             console.log(this.user);
 
 
             this.navController.navigateRoot('/verifi-datos').then()
         }
+
     }
 
     selectOption(dni: string){
@@ -79,7 +92,7 @@ export class InfoGenPage implements OnInit {
         this.selectedOption = dni;
     }
 
-    selectGender(gender: string) {
+    selectedGender(gender: string) {
         this.show2 = false;
         this.genderOptions = gender;
         console.log(gender);

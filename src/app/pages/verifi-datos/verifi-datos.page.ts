@@ -13,6 +13,7 @@ export class VerifiDatosPage implements OnInit {
   show: any;
   userForm: FormGroup;
   user: UserModel = new UserModel();
+  gender: string = null;
 
   constructor(private formBuilder: FormBuilder,
               private navController: NavController) {
@@ -30,26 +31,25 @@ export class VerifiDatosPage implements OnInit {
       ])],
       secondLastName: ['', Validators.compose([
         Validators.required
-      ])],
-      gender: ['', Validators.compose([
-        Validators.required
       ])]
     });
   }
 
   ngOnInit() {
     const user = localStorage.getItem('user');
-    this.user.setGender_Gender(JSON.parse(user));
-    console.log(this.user);
+    this.user.set(JSON.parse(user));
+    console.log(this.user.getGender_Gender());
+    this.gender = this.user.getGender_Gender();
+
   }
 
   continue() {
 
     this.user.setFirstName(this.userForm.get('firstName').value);
     this.user.setSecondName(this.userForm.get('secondName').value);
-    this.user.setFirstLastNames(this.userForm.get('lastName').value);
-    this.user.setSecondLastNames(this.userForm.get('secondLastName').value);
-    this.user.setGender_Gender(this.userForm.get('gender').value);
+    this.user.setFirstLastName(this.userForm.get('lastName').value);
+    this.user.setSecondLastName(this.userForm.get('secondLastName').value);
+    this.user.setGender_Gender(this.gender);
 
     localStorage.setItem('user',JSON.stringify(this.user));
     console.log(this.user);

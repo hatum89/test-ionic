@@ -4,10 +4,13 @@ export class UserModel {
     private phone_number: number;
     private names: string;
     private last_names: string;
+    private first_name: string;
+    private second_name: string;
+    private first_last_name: string;
+    private second_last_name: string;
     private document_id: number;
     private document_number: number;
     private document_type: number;
-    private dateTime_ExpedicionDate: number;
     private document_expiration_date: string;
     private birth_date: string;
     private gender_id: number;
@@ -38,6 +41,10 @@ export class UserModel {
         this.imei = null;
         this.last_names = null;
         this.names = null;
+        this.first_name = null;
+        this.second_name = null;
+        this.first_last_name = null;
+        this.second_last_name = null;
         this.parent_info = null;
         this.phone_number = null;
         this.pin = null;
@@ -46,7 +53,6 @@ export class UserModel {
         this.referrer_phonenumber = null;
         this.state_id = null;
         this.topic_registration_id = null;
-        this.dateTime_ExpedicionDate = null;
         this.bool = null;
 
     }
@@ -56,7 +62,6 @@ export class UserModel {
         this.birth_date = user.birth_date;
         this.bool = user.bool;
         this.city_id = user.city_id;
-        this.dateTime_ExpedicionDate = user.dateTime_ExpedicionDate;
         this.document_expiration_date = user.document_expiration_date;
         this.document_id = user.document_id;
         this.document_number = user.document_number;
@@ -66,6 +71,10 @@ export class UserModel {
         this.imei = user.imei;
         this.last_names = user.last_names;
         this.names = user.names;
+        this.first_name = user.first_name;
+        this.second_name = user.second_name;
+        this.first_last_name = user.first_last_name;
+        this.second_last_name = user.second_last_name;
         this.parent_info = user.parent_info;
         this.phone_number = user.phone_number;
         this.pin = user.pin;
@@ -76,6 +85,44 @@ export class UserModel {
         this.topic_registration_id = user.topic_registration_id;
     }
 
+
+    public getFirstName() {
+        return this.first_name;
+    }
+    public setFirstName(firs_name) {
+        this.first_name = firs_name;
+        this.names = this.first_name + ' ' + this.second_name;
+    }
+    public getSecondName() {
+        return this.second_name;
+    }
+    public setSecondName(second_name) {
+        this.second_name = second_name;
+        this.names = this.first_name + ' ' + this.second_name;
+    }
+    public getFirstLast_Name() {
+        return this.first_last_name;
+    }
+    public setFirstLastName(firs_Last_name) {
+        this.first_last_name = firs_Last_name;
+        this.last_names = this.first_last_name + ' ' + this.second_last_name;
+    }
+    public getSecondLastName() {
+        return this.second_name;
+    }
+    public setSecondLastName(second_Last_name) {
+        this.second_last_name = second_Last_name;
+        this.last_names = this.first_last_name + ' ' + this.second_last_name;
+    }
+
+
+
+    public getDateTime_ExpedicionDate() {
+        return this.document_expiration_date;
+    }
+    public setDateTime_ExpedicionDate(document_expiration_date) {
+        this.document_expiration_date = document_expiration_date;
+    }
 
     public getPhoneNumber () {
         return this.phone_number;
@@ -101,41 +148,14 @@ export class UserModel {
     public setDocument_type (document_type) {
         this.document_type = document_type;
     }
-    public getDateTime_ExpedicionDatee() {
-        return this.dateTime_ExpedicionDate;
-    }
-    public setDateTime_ExpedicionDate (dateTime_ExpedicionDate){
-        this.dateTime_ExpedicionDate = dateTime_ExpedicionDate;
-    }
+
     public getDateTime_BirthDate() {
         return this.birth_date;
     }
     public setDateTime_BirthDate (dateTime_BirthDate){
         this.birth_date = dateTime_BirthDate;
-    }public getFirstName() {
-        return this.names;
     }
-    public setFirstName (name){
-        this.names = name;
-    }
-    public getSecondName() {
-        return this.names;
-    }
-    public setSecondName (name){
-        this.names = name;
-    }
-    public  getFirstLastNames() {
-        return this.last_names;
-    }
-    public setFirstLastNames (firsLastName){
-        this.last_names = firsLastName;
-    }
-    public getSecondLastNames() {
-        return this.last_names;
-    }
-    public setSecondLastNames (secondLastNames){
-        this.last_names = secondLastNames;
-    }
+
     public getGender_Gender() {
         return this.gender;
     }
@@ -220,6 +240,11 @@ export class UserModel {
     public setQueryId (query_Id) {
         this.query_id = query_Id;
     }
-
+    public getNames() {
+        return this.names;
+    }
+    public getLastNames() {
+        return this.last_names;
+    }
 
 }

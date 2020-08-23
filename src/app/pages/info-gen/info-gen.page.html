@@ -38,7 +38,6 @@
 </div>
 <ion-content>
 
-  <form [formGroup]="userForm" (ngSubmit)="continue()">
     <ion-card style="width: 406px; box-shadow: none">
       <div style="position: relative; margin-bottom: -1px;" [style]="(show)? 'background-color: rgb(249 249 249)':'background-color: white'">
         <ion-grid>
@@ -61,6 +60,7 @@
           </ion-text>
         </div>
       </div>
+      <form [formGroup]="userForm" (ngSubmit)="continue()">
 
       <ion-item style="z-index: 0">
         <ion-label style="color:#AAAAAA; z-index: 0" position="floating">Número de documento</ion-label>
@@ -74,7 +74,9 @@
         <ion-label style="color:#AAAAAA" position="floating">Fecha de expedición del documento</ion-label>
         <ion-input formControlName="dateExpedition"></ion-input>
       </ion-item>
-      <div [style]="(show2)? 'background-color: rgb(249 249 249)':'background-color: white'">
+      </form>
+
+      <div (click)="show2 = !show2" [style]="(show2)? 'background-color: rgb(249 249 249)':'background-color: white'">
         <div  style="position: relative; margin-bottom: -1px">
           <ion-grid>
             <ion-row>
@@ -82,7 +84,7 @@
                 <ion-text  (click)="show2 = !show2" class="text-document2" [style]="(show2)? 'font-size: 15px': 'font-size: 15px'">
                   {{ genderOptions ?  genderOptions : 'Género que aparece en tu documento de identidad' }}</ion-text>
               </ion-col>
-              <ion-col>
+              <ion-col (click)="show2 = !show2">
                 <ion-icon (click)="show2 = !show2" class="icon2" style="" src="./assets/img/drop-down-arrow.svg"></ion-icon>
               </ion-col>
             </ion-row>
@@ -91,7 +93,7 @@
           <hr class="hr2">
 
           <div class="divDni" *ngIf="show2" [style]="(show2)? 'background-color: rgb(249 249 249)':'background-color: none'">
-            <ion-text class="dni-text" *ngFor="let gender of options" (click)="selectGender(gender)">
+            <ion-text (click)="show2 = !show2" class="dni-text" *ngFor="let gender of options" (click)="selectedGender(gender)">
               {{gender}}
             </ion-text>
           </div>
@@ -102,7 +104,7 @@
         <span class="get-into-text">Continuar</span>
       </button>
     </ion-card>
-  </form>
+
 
 
 </ion-content >
