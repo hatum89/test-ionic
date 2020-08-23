@@ -42,20 +42,20 @@
     <ion-card style="width: 406px; box-shadow: none">
 
       <ion-item >
-        <div class="div-select" >
+        <div class="div-select">
           <ion-grid>
             <ion-row>
               <ion-col>
-                <ion-text  (click)="show = !show" class="tex-document" [style]="(show)? 'font-size: 16px': 'font-size: 20px'">
+                <ion-text  (click)="show = !show" class="tex-document" [style]="(show)? 'font-size: 14px': 'font-size: 15px'">
                   {{ selectedOption ?  selectedOption : 'Tipo de documento' }}</ion-text>
               </ion-col>
-              <ion-col style="margin-top: -22px;margin-right: 33px; margin-left: -2px;" (click)="show = !show">
+              <ion-col class="colArrow" (click)="show = !show">
                 <ion-icon class="icon" style="color: #757575" src="./assets/img/drop-down-arrow.svg"></ion-icon>
               </ion-col>
             </ion-row>
-            <hr [hidden]="show" style="background-color: #B6B6B6; width:400px; height: 1px">
+            <hr [hidden]="show" style="background-color: #cdcdcd; width:400px; height: 1px">
           </ion-grid>
-          <div style="display: flex; flex-direction: column;margin-left: 16px;margin-top: 10px;" *ngIf="show">
+          <div class="divDni" style="" *ngIf="show">
             <ion-text class="dni-text" *ngFor="let dni of optionsDni" (click)="selectOption(dni)">
               {{dni}}
             </ion-text>
@@ -83,13 +83,13 @@
                 <ion-text  (click)="show2 = !show2" class="tex-document" [style]="(show2)? 'font-size: 14px': 'font-size: 15px'">
                   {{ genderOptions ? genderOptions : 'Género que aparece en tu documento de identidad' }}</ion-text>
               </ion-col>
-              <ion-col style="margin-top: -22px;margin-right: 33px; margin-left: -2px;" (click)="show2 = !show2">
+              <ion-col class="colArrow" (click)="show2 = !show2">
                 <ion-icon class="icon" style="color: #757575" src="./assets/img/drop-down-arrow.svg"></ion-icon>
               </ion-col>
             </ion-row>
             <hr [hidden]="show2" style="background-color: #B6B6B6; width:400px; height: 1px">
           </ion-grid>
-          <div style="display: flex; flex-direction: column;margin-left: 16px;margin-top: 10px;" *ngIf="show2">
+          <div class="divDni" *ngIf="show2">
             <ion-text class="dni-text" *ngFor="let gender of options" (click)="selectGender(gender)">
               {{gender}}
             </ion-text>
@@ -112,12 +112,11 @@
   <button id="modal1" style="visibility: hidden" onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black">Fade In Modal</button>
 
   <div id="id01" class="w3-modal w3-animate-opacity" >
-    <div class="w3-modal-content w3-card-4"
-         style="margin-top: 275px;width: 319px !important; height: 165px; margin-left: 48px; border-radius: 4px">
+    <div class="w3-modal-content w3-card-4">
       <div>
 
         <div class="w3-container" style="padding-top: 14px;">
-          <span style="color: #F44336; font-size: 20px; padding: 22px; margin-left: -29px">Error</span><br>
+          <span class="spanError" style="">Error</span><br>
 
           <div style="padding-top: 8px">
             <ion-text>El numero de documento <strong>80186587</strong> ya </ion-text>
@@ -126,9 +125,9 @@
 
         </div>
         <div class="w3-container" style="margin-top: 20px">
-          <ion-text style="color: #004B40; margin-left: 198px; margin-bottom: 30px; font-weight: bold;"
+          <ion-text class="textVolver"
                     onclick="document.getElementById('id01').style.display='none'"
-                    >VOLVER</ion-text>
+          >VOLVER</ion-text>
         </div>
       </div>
     </div>
@@ -139,12 +138,11 @@
   <button id="modal2" style="visibility: hidden" onclick="document.getElementById('id0').style.display='block'" class="w3-button w3-black">Fade In Modal</button>
 
   <div id="id0" class="w3-modal w3-animate-opacity" >
-    <div class="w3-modal-content w3-card-4"
-         style="margin-top: 275px;width: 319px !important; height: 165px; margin-left: 48px; border-radius: 4px">
+    <div class="w3-modal-content w3-card-4">
       <div>
 
         <div class="w3-container" style="padding-top: 14px;">
-          <span style="color: #F44336; font-size: 20px; padding: 22px; margin-left: -29px">Error de conexión</span><br>
+          <span class="spanErrorConexion" style="">Error de conexión</span><br>
 
           <div style="padding-top: 8px">
             <ion-text>Revisa tu conexión a internet e intenta de</ion-text><br>
@@ -153,7 +151,7 @@
 
         </div>
         <div class="w3-container" style="margin-top: 20px">
-          <ion-text style="color: #004B40; margin-left: 198px; margin-bottom: 30px; font-weight: bold;"
+          <ion-text class="textVolver"
                     onclick="document.getElementById('id0').style.display='none'"
           >VOLVER</ion-text>
         </div>
@@ -166,12 +164,11 @@
   <button id="modal3" style="visibility: hidden" onclick="document.getElementById('id3').style.display='block'" class="w3-button w3-black">Fade In Modal</button>
 
   <div id="id3" class="w3-modal w3-animate-opacity" >
-    <div class="w3-modal-content w3-card-4"
-         style="margin-top: 275px;width: 319px !important; height: 165px; margin-left: 48px; border-radius: 4px">
+    <div class="w3-modal-content w3-card-4">
       <div>
 
         <div class="w3-container" style="padding-top: 14px;">
-          <span style="color: #F44336; font-size: 20px; padding: 22px; margin-left: -29px">Algo pasa</span><br>
+          <span class="spanAlgoPasa">Algo pasa</span><br>
 
           <div style="padding-top: 8px">
             <ion-text>Los datos que pusiste no coinciden,</ion-text><br>
@@ -180,7 +177,7 @@
 
         </div>
         <div class="w3-container" style="margin-top: 20px">
-          <ion-text style="color: #004B40; margin-left: 198px; margin-bottom: 30px; font-weight: bold;"
+          <ion-text class="textVolver"
                     onclick="document.getElementById('id3').style.display='none'"
           >VOLVER</ion-text>
         </div>

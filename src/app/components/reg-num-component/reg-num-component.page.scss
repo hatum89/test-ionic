@@ -96,9 +96,16 @@ h1{
 .textNum {
   font-family:'Montserrat', Regular;
   color: #004B40;
+
+}
+.textNum0{
+  margin-left: -59px;
 }
 .listN1 {
   padding: 25px;
+  display: flex;
+  justify-content: center;
+  margin-right: -116px;
 }
 .imgCheck {
   font-size: 50px;
@@ -109,4 +116,65 @@ h1{
 .w3-container {
   margin-top: 30px;
   margin-left: 20px
+}
+.colBandera {
+  display: flex;
+  padding-top: 16px
+}
+.textIndicativo {
+  margin-left: 15px;
+  padding-right: 6px;
+  font-family: 'Roboto Light', Regular;
+  font-weight: bold;
+  margin-top: 2px
+}
+.inputNumber {
+  margin-top: -10px;
+  margin-left: 2px;
+}
+.divNumber2 {
+  display: flex;
+  width: 110px;
+  margin-left: 3px
+}
+.imgBorrar {
+  width: 49px;
+  margin-left: -185px;
+}
+.w3-modal-content{
+  margin-top: 275px;
+  width: 319px !important;
+  height: 165px;
+  margin-left: 48px;
+  border-radius: 4px;
+}
+.spanError {
+  color: #F44336;
+  font-size: 20px;
+  padding: 22px;
+  margin-left: -29px;
+}
+.textVolver {
+  color: #004B40;
+  margin-left: 198px;
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+.spanSeguro {
+  color: #004B40;
+  font-size: 20px;
+  padding: 22px;
+  margin-left: -29px;
+}
+.textNo{
+  color: #004B40;
+  margin-left: 198px;
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+.textCancelar {
+  color: #F44336;
+  margin-left: 198px;
+  margin-bottom: 30px;
+  font-weight: bold;
 }

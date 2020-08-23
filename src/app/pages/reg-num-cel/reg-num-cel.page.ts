@@ -7,15 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./reg-num-cel.page.scss'],
 })
 export class RegNumCelPage implements OnInit{
-   number = '';
-   number2 = '';
+
   constructor( ) {
 
   }
 
   ngOnInit(){
-    this.number = '310';
-    this.number2 = '2398949';
+
   }
 
 

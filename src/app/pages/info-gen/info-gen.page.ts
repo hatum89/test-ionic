@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {NavController} from '@ionic/angular';
 import {UserModel} from '../../models/user.model';
@@ -57,7 +57,9 @@ export class InfoGenPage implements OnInit {
 
     continue() {
         if(this.userForm.get('documentNumber').value === '80186587'){
-            document.getElementById('modal1').click();
+            // document.getElementById('modal1').click();
+            // document.getElementById('modal2').click(); //error de conexión de internet
+            document.getElementById('modal3').click(); //algo pasa
         } else {
             this.user.setDocument_type(this.userForm.get('kindDocument').value);
             this.user.setDocument_number(this.userForm.get('documentNumber').value);
@@ -67,15 +69,14 @@ export class InfoGenPage implements OnInit {
             localStorage.setItem('user', JSON.stringify(this.user));
             console.log(this.user);
 
-            // document.getElementById('modal2').click(); //error de conexión de internet
-            // document.getElementById('modal3').click(); //algo pasa
+
             this.navController.navigateRoot('/verifi-datos').then()
         }
     }
 
-    selectOption(text: string){
+    selectOption(dni: string){
         this.show = false;
-        this.selectedOption = text;
+        this.selectedOption = dni;
     }
 
     selectGender(gender: string) {

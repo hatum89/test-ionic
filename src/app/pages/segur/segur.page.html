@@ -71,12 +71,11 @@
   <button id="modal1" style="visibility: hidden" onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black">Fade In Modal</button>
 
   <div id="id01" class="w3-modal w3-animate-opacity" >
-    <div class="w3-modal-content w3-card-4"
-         style="margin-top: 275px;width: 319px !important; height: 165px; margin-left: 48px; border-radius: 4px">
+    <div class="w3-modal-content w3-card-4">
       <div>
 
         <div class="w3-container" style="padding-top: 14px;">
-          <span style="color: #F44336; font-size: 20px; padding: 22px; margin-left: -29px">Error</span><br>
+          <span class="spanError">Error</span><br>
           <div style="padding-top: 8px">
             <ion-text>El E-mail <strong>yo123@hotmail.com</strong> ya </ion-text>
             <ion-text>está <br>asociado a otro usuario.</ion-text>
@@ -84,9 +83,9 @@
 
         </div>
         <div class="w3-container">
-          <ion-text style="color: #004B40; margin-left: 198px; margin-bottom: 30px; font-weight: bold;"
+          <ion-text class="textVolver"
                     onclick="document.getElementById('id01').style.display='none'"
-                    >VOLVER</ion-text>
+          >VOLVER</ion-text>
         </div>
       </div>
     </div>

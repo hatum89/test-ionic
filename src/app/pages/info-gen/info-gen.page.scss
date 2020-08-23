@@ -125,7 +125,6 @@
   height: 55px;
 }
 
-//------------------------------------------------------------------------------
 
 .div-select {
   width: 100%;
@@ -145,116 +144,56 @@
 .dni-text:hover {
   background-color: #EEEEEE;
 }
-//------------------------------------------------------------------------------
 
-.select-main-container {
-  width: 300px;
-  height: 24px;
-  background-color: white;
-  position: relative;
-  padding: 11.05px 11.53px;
-  transition: all 0.1s ease-in-out;
-  overflow-y: hidden;
-  cursor: pointer;
-  z-index: 2;
-}
-
-.expanded-select {
-  -webkit-box-shadow: 0;
-  -moz-box-shadow: 0;
-  box-shadow: 0;
-}
-
-.select-options {
-  width: 300px;
-  background-color: white;
-  position: absolute;
-  padding: 0 11.53px;
-  transition: all 0.1s ease-in-out;
-  overflow-x: hidden;
-  cursor: pointer;
-  opacity: 0;
-  z-index: 2;
-}
-
-.shadow {
-  width: 322px;
-  height: 46px;
-  background-color: white;
-  position: absolute;
-  -webkit-box-shadow: 0px 1px 3px 2px rgba(0,0,0,0.41);
-  -moz-box-shadow: 0px 1px 3px 2px rgba(0,0,0,0.41);
-  box-shadow: 0px 1px 3px 2px rgba(0,0,0,0.41);
-  top: 8px;
-  left: 9px;
-  z-index: 1;
-}
-
-.shadow-selected {
-  height: 110px;
-}
-
-.options-selected {
-  opacity: 1;
-
-}
-
-.options-selected::before {
-  content: "";
-  height: 15px;
-  width: 100%;
-  position: absolute;
-  top: -15px;
-  background: inherit;
-  left: 0px;
-}
-
-.bottom-line {
-  height: 2px;
-  background-color: #000000;
-  opacity: 0.1;
-  width: 100%;
-  margin-bottom: 12px;
-}
-
-.option {
-  height: 32px;
-  width: 110%;
-  display: flex;
-  align-items: center;
-  position: relative;
-  right: 5%;
-  padding-left: 5%;
-}
-
-.option:hover {
-  background-color: #eeeeee;
-}
-
-.selected-option {
-  background-color: #eeeeee;
-}
-
-
-.select-text {
-  margin: 0 auto 4px 0;
-  color: #aaaaaa;
-  font-family: 'avenir-next-lt-pro-regular';
-  font-size: 16px;
-  text-align: left;
-  font-weight: 400;
-  opacity: 0.8;
-}
-
-.option-text {
-  margin: 0;
-  color: #000000;
-  font-family: 'avenir-next-lt-pro-regular';
-  font-size: 16px;
-  text-align: left;
-  font-weight: 400;
-}
 
 .w3-modal-content .w3-card-2 {
   max-width: 22% !important;
+}
+.colArrow {
+  margin-top: -22px;
+  margin-right: 33px;
+  margin-left: -2px;
+}
+.divDni {
+  display: flex;
+  flex-direction: column;
+  margin-left: 16px;
+  margin-top: 10px;
+}
+.spanError {
+  color: #F44336;
+  font-size: 20px;
+  padding: 22px;
+  margin-left: -29px;
+}
+.textVolver {
+  color: #004B40;
+  margin-left: 198px;
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+.w3-modal-content{
+  margin-top: 275px;
+  width: 319px !important;
+  height: 165px;
+  margin-left: 48px;
+  border-radius: 4px;
+}
+.spanErrorConexion {
+  color: #F44336;
+  font-size: 20px;
+  padding: 22px;
+  margin-left: -29px;
+}
+.textVolver {
+  color: #004B40;
+  margin-left: 198px;
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+.spanAlgoPasa {
+  color: #F44336;
+  font-size: 20px;
+  padding: 22px;
+  margin-left: -29px;
 }

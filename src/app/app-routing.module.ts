@@ -23,10 +23,7 @@ const routes: Routes = [
     path: 'reg-num-component',
     loadChildren: () => import('./components/reg-num-component/reg-num-component.module').then( m => m.RegNumComponentPageModule)
   },
-  {
-    path: 'num-cel-innput',
-    loadChildren: () => import('./pages/num-cel-innput/num-cel-innput.module').then( m => m.NumCelInnputPageModule)
-  },
+
   {
     path: 'cod-verif',
     loadChildren: () => import('./pages/cod-verif/cod-verif.module').then( m => m.CodVerifPageModule)
