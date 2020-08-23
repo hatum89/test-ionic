@@ -29,7 +29,7 @@
         <ion-text class="textDato">¿CUALES SON TUS DATOS?</ion-text>
         <br>
         <div style="margin-top: 9px">
-          <ion-text class="text">Ahora necesitamos saber algunos datos tuyos </ion-text>
+          <ion-text class="text">Ahora necesitamos saber algunos<br> datos tuyos </ion-text>
         </div>
       </ion-col>
     </ion-row>
@@ -40,63 +40,63 @@
 
   <form [formGroup]="userForm" (ngSubmit)="continue()">
     <ion-card style="width: 406px; box-shadow: none">
+      <div style="position: relative; margin-bottom: -1px;" [style]="(show)? 'background-color: rgb(249 249 249)':'background-color: white'">
+        <ion-grid>
+          <ion-row>
+            <ion-col (click)="show = !show">
+              <ion-text  (click)="show = !show" class="tex-document" [style]="(show)? 'font-size: 20px': 'font-size: 18px'">
+                {{ selectedOption ?  selectedOption : 'Tipo de documento' }}</ion-text>
+            </ion-col>
+            <ion-col>
+              <ion-icon (click)="show = !show" class="icon" style="color: #757575" src="./assets/img/drop-down-arrow.svg"></ion-icon>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
 
-      <ion-item >
-        <div class="div-select">
-          <ion-grid>
-            <ion-row>
-              <ion-col>
-                <ion-text  (click)="show = !show" class="tex-document" [style]="(show)? 'font-size: 14px': 'font-size: 15px'">
-                  {{ selectedOption ?  selectedOption : 'Tipo de documento' }}</ion-text>
-              </ion-col>
-              <ion-col class="colArrow" (click)="show = !show">
-                <ion-icon class="icon" style="color: #757575" src="./assets/img/drop-down-arrow.svg"></ion-icon>
-              </ion-col>
-            </ion-row>
-            <hr [hidden]="show" style="background-color: #cdcdcd; width:400px; height: 1px">
-          </ion-grid>
-          <div class="divDni" style="" *ngIf="show">
-            <ion-text class="dni-text" *ngFor="let dni of optionsDni" (click)="selectOption(dni)">
-              {{dni}}
-            </ion-text>
-          </div>
+        <hr class="hr2">
+
+        <div class="divDni" *ngIf="show" [style]="(show)? 'background-color: rgb(249 249 249)':'background-color: none'">
+          <ion-text class="dni-text" *ngFor="let dni of optionsDni" (click)="selectOption(dni)">
+            {{dni}}
+          </ion-text>
         </div>
+      </div>
 
-      </ion-item>
-      <ion-item>
-        <ion-label style="color:#AAAAAA" position="floating">Número de documento</ion-label>
+      <ion-item style="z-index: 0">
+        <ion-label style="color:#AAAAAA; z-index: 0" position="floating">Número de documento</ion-label>
         <ion-input formControlName="documentNumber"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label style="color:#AAAAAA" position="floating">Fecha de nacimiento</ion-label>
-        <ion-input placeholder="1989-06-18" formControlName="dateBorn"></ion-input>
+        <ion-input formControlName="dateBorn"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label style="color:#AAAAAA" position="floating">Fecha de expedición del documento</ion-label>
-        <ion-input placeholder="2000-06-18" formControlName="dateExpedition"></ion-input>
+        <ion-input formControlName="dateExpedition"></ion-input>
       </ion-item>
-      <ion-item >
-        <div class="div-select" >
+      <div [style]="(show2)? 'background-color: rgb(249 249 249)':'background-color: white'">
+        <div  style="position: relative; margin-bottom: -1px">
           <ion-grid>
             <ion-row>
-              <ion-col>
-                <ion-text  (click)="show2 = !show2" class="tex-document" [style]="(show2)? 'font-size: 14px': 'font-size: 15px'">
-                  {{ genderOptions ? genderOptions : 'Género que aparece en tu documento de identidad' }}</ion-text>
+              <ion-col (click)="show2 = !show2">
+                <ion-text  (click)="show2 = !show2" class="text-document2" [style]="(show2)? 'font-size: 15px': 'font-size: 15px'">
+                  {{ genderOptions ?  genderOptions : 'Género que aparece en tu documento de identidad' }}</ion-text>
               </ion-col>
-              <ion-col class="colArrow" (click)="show2 = !show2">
-                <ion-icon class="icon" style="color: #757575" src="./assets/img/drop-down-arrow.svg"></ion-icon>
+              <ion-col>
+                <ion-icon (click)="show2 = !show2" class="icon2" style="" src="./assets/img/drop-down-arrow.svg"></ion-icon>
               </ion-col>
             </ion-row>
-            <hr [hidden]="show2" style="background-color: #B6B6B6; width:400px; height: 1px">
           </ion-grid>
-          <div class="divDni" *ngIf="show2">
+
+          <hr class="hr2">
+
+          <div class="divDni" *ngIf="show2" [style]="(show2)? 'background-color: rgb(249 249 249)':'background-color: none'">
             <ion-text class="dni-text" *ngFor="let gender of options" (click)="selectGender(gender)">
               {{gender}}
             </ion-text>
           </div>
         </div>
-
-      </ion-item>
+      </div>
 
       <button class="get-into" (click)="continue()">
         <span class="get-into-text">Continuar</span>
