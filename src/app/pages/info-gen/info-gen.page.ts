@@ -75,8 +75,10 @@ export class InfoGenPage implements OnInit {
         } else {
             this.user.setDocument_type(this.dni2);
             this.user.setDocument_number(this.userForm.get('documentNumber').value);
-            this.user.setDateTime_BirthDate(this.userForm.get('dateBorn').value);
-            this.user.setDateTime_ExpedicionDate(this.userForm.get('dateExpedition').value);
+            const userBirthDate = this.userForm.get('dateExpedition').value.substr(0,10);
+            this.user.setDateTime_BirthDate(userBirthDate);
+            const userExpeditionDate = this.userForm.get('dateExpedition').value.substr(0,10);
+            this.user.setDateTime_ExpedicionDate(userExpeditionDate);
             this.user.setGender_Gender(this.gender2);
             localStorage.setItem('user', JSON.stringify(this.user));
             console.log(this.user);
@@ -95,6 +97,6 @@ export class InfoGenPage implements OnInit {
     selectedGender(gender: string) {
         this.show2 = false;
         this.genderOptions = gender;
-        console.log(gender);
+        document.getElementById('arrow').click();
     }
 }

@@ -58,15 +58,15 @@
       <ion-input type="number" style="color: #004B40"  formControlName="confirmPin"></ion-input>
     </ion-item>
 
-    <div class="get-into" (click)="continue()">
+    <button [disabled]="userForm.invalid" [ngClass]="(userForm.invalid)? 'get-into3': 'get-into2'" (click)="continue()">
       <span class="get-into-text">Siguiente</span>
-    </div>
+    </button>
 
 
   </form>
 
 </ion-content>
-<div class="w3-container">
+<div class="w3-container" style="margin-top: -56px">
 
   <button id="modal1" style="visibility: hidden" onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black">Fade In Modal</button>
 
@@ -85,6 +85,31 @@
         <div class="w3-container">
           <ion-text class="textVolver"
                     onclick="document.getElementById('id01').style.display='none'"
+          >VOLVER</ion-text>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="w3-container">
+
+  <button id="modal2" style="visibility: hidden" onclick="document.getElementById('id02').style.display='block'" class="w3-button w3-black">Fade In Modal</button>
+
+  <div id="id02" class="w3-modal w3-animate-opacity" >
+    <div class="w3-modal-content w3-card-4">
+      <div>
+
+        <div class="w3-container" style="padding-top: 14px;">
+          <span class="spanError">Error de Verificación</span><br>
+          <div style="padding-top: 8px">
+            <ion-text>Verifique su email y/o Pin,<br>
+              <strong>por favor vuelva a intentarlo</strong></ion-text>
+          </div>
+
+        </div>
+        <div class="w3-container">
+          <ion-text class="textVolver"
+                    onclick="document.getElementById('id02').style.display='none'"
           >VOLVER</ion-text>
         </div>
       </div>

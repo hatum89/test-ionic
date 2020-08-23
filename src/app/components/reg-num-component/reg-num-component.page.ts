@@ -166,10 +166,6 @@ export class RegNumComponentPage implements OnInit {
   }
 
 
-  sure() {
-    document.getElementById('modal').click();
-  }
-
   cancel() {
     this.navController.navigateRoot('/').then()
   }

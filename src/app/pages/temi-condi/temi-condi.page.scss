@@ -91,7 +91,7 @@
 }
 .get-into-text {
   font-family: 'Montserrat', Medium;
-  margin-top: 18px;
+  margin-top: 15px;
   font-size: 21px;
   color: #004B40;
   font-weight: bold;
@@ -99,7 +99,7 @@
 .get-into {
   display: flex;
   justify-content: center;
-  margin-top: 32px;
+  margin-top: 59px;
   margin-left: -16px;
   background-color: var(--ion-color-ligthGreen);
   border-radius: 40px 40px 40px 40px;
@@ -119,4 +119,33 @@
   color: #404040;
   display: flex;
   font-family: Montserrat;
+}
+.w3-modal-content{
+  margin-top: 275px;
+  width: 319px !important;
+  height: 165px;
+  margin-left: 48px;
+  border-radius: 4px;
+}
+.w3-container {
+  margin-top: 30px;
+  margin-left: 20px
+}
+.spanError{
+  color: var(--ion-color-ligthGreen);
+  font-size: 20px;
+  padding: 22px;
+  margin-left: -29px;
+}
+.spanError2 {
+  color: #F44336;
+  font-size: 20px;
+  padding: 22px;
+  margin-left: -29px;
+}
+.textVolver {
+  color: #004B40;
+  margin-left: 198px;
+  margin-bottom: 30px;
+  font-weight: bold;
 }

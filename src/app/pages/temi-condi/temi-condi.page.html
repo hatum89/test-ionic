@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
 <ion-card class="card-header">
 
   <ion-img routerLink="/verifi-datos" class="Back_icon" src="./assets/img/Back_icon.svg"></ion-img>
@@ -92,12 +94,12 @@
     <div class="divText">
       He leído, entendido y aceptado estos <br> términos y condiciones
       <div style="margin-left: 50px">
-        <ion-icon (click)="access =! access"
+        <ion-icon (click)="access = !access"
                   [style]="(access)? 'color: #1EEA00':'color: #878787'"
                   class="icon-check" src="./assets/img/comprobar.svg"></ion-icon>
       </div>
     </div>
-    <button [disabled]="!access" class="get-into" (click)="continue()">
+    <button [disabled]="!access" [style]="(access)? 'background-color:#1EEA00':'background-color:#878787'" class="get-into" (click)="continue()">
       <span class="get-into-text">Aceptar y finalizar</span>
     </button>
 
@@ -108,3 +110,57 @@
   </div>
 
 </ion-content>
+<div class="w3-container" style="margin-top: -100px">
+
+  <button id="modal1" style="visibility: hidden;" onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black">Fade In Modal</button>
+
+  <div id="id01" class="w3-modal w3-animate-opacity" >
+    <div class="w3-modal-content w3-card-4">
+      <div>
+
+        <div class="w3-container" style="padding-top: 14px;">
+          <span class="spanError">Felicidades</span><br>
+
+          <div style="padding-top: 8px">
+            <ion-text>Felicitaciones ya te has registrado</ion-text><br>
+            <ion-text>A nuestra app</ion-text>
+          </div>
+
+        </div>
+        <div class="w3-container" style="margin-top: 24px">
+          <ion-text class="textVolver"
+                    onclick="document.getElementById('id01').style.display='none'"
+                    >VOLVER</ion-text>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="w3-container">
+
+  <button id="modal2" style="visibility: hidden; margin-top: -11px" onclick="document.getElementById('id02').style.display='block'" class="w3-button w3-black">Fade In Modal</button>
+
+  <div id="id02" class="w3-modal w3-animate-opacity" >
+    <div class="w3-modal-content w3-card-4">
+      <div>
+
+        <div class="w3-container" style="padding-top: 14px;">
+          <span class="spanError2">Error en el servidor</span><br>
+
+          <div style="padding-top: 8px">
+            <ion-text>Ups, Lo sentimos problemas tecnicos</ion-text><br>
+            <ion-text>Gracias por entender</ion-text>
+          </div>
+
+        </div>
+        <div class="w3-container" style="margin-top: 24px">
+          <ion-text class="textVolver"
+                    onclick="document.getElementById('id02').style.display='none'"
+          >VOLVER</ion-text>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

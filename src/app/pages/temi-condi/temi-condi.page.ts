@@ -27,10 +27,12 @@ export class TemiCondiPage implements OnInit {
         .subscribe( response => {
           console.log(response);
           localStorage.clear();
-          alert('Felicitaciones ya te has registrado');
-            this.navController.navigateRoot('/home').then()
+          document.getElementById('modal1').click();
+          setTimeout(()=> {
+              this.navController.navigateRoot('/home').then();
+          },1000);
         }, error => {
-            alert('Error en el registro');
+            document.getElementById('modal2').click();
             console.log(error);
         });
   }

@@ -14,7 +14,7 @@ export class VerifyDirectLoginService {
               private encryptDecryptService: EncryptDecryptService) { }
 
   getLogin() {
-    //TODO: Implements methods in some place... some time... Juan Alexander Hatum
+    //TODO: Implements methods in some place... some time... Juan Alexander Hatum Varela
     const url = `${environment.server}${this.url}?apiKey=${environment.token}`;
     const data = {phone_number: '573112222222', imei: '7AD0E1F1-521E-43E6-B267-62D10CDEEC79'};
     const serializedJson = JSON.stringify(data);

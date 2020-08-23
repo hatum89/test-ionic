@@ -42,6 +42,11 @@ export class SegurPage implements OnInit {
   }
 
   continue() {
+    if(this.userForm.get('email').value !== this.userForm.get('confirmEmail').value
+        || this.userForm.get('pin').value !== this.userForm.get('confirmPin').value){
+      document.getElementById('modal2').click();
+      return;
+    }
     if(this.userForm.get('email').value === 'yo123@hotmail.com'){
       document.getElementById('modal1').click();
     } else {

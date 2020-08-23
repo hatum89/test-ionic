@@ -16,7 +16,7 @@ export class SignupV2Service {
 
   signup(user: UserModel) {
     const url = `${environment.server}${this.url}?apiKey=${environment.token}`;
-    // TODO: Implements all methods, for effect of this test, I burn this data. Juan Hatum
+    // TODO: Implements all methods, for effect of this test, I burn this data. Juan Alexander Hatum Varela
     const userRequest = {
       phone_number: user.getPhoneNumber(),
       names: user.getNames(),

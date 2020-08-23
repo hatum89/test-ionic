@@ -117,7 +117,17 @@
   font-size: 25px;
   color: #004B40;
 }
-.get-into {
+.get-into3 {
+  display: flex;
+  justify-content: center;
+  margin-top: 105px;
+  margin-left: 13px;
+  background-color: #878787;
+  border-radius: 40px 40px 40px 40px;
+  width: 388px;
+  height: 55px;
+}
+.get-into2 {
   display: flex;
   justify-content: center;
   margin-top: 105px;
@@ -162,7 +172,7 @@
 .divDni {
   display: flex;
   flex-direction: column;
-  margin-left: 20px;
+  margin-left: 17px;
   margin-top: -2px;
   position: absolute;
   z-index: 100;

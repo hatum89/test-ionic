@@ -38,72 +38,77 @@
 </div>
 <ion-content>
 
-    <ion-card style="width: 406px; box-shadow: none">
-      <div style="position: relative; margin-bottom: -1px;" [style]="(show)? 'background-color: rgb(249 249 249)':'background-color: white'">
-        <ion-grid>
-          <ion-row>
-            <ion-col (click)="show = !show">
-              <ion-text  (click)="show = !show" class="tex-document" [style]="(show)? 'font-size: 20px': 'font-size: 18px'">
-                {{ selectedOption ?  selectedOption : 'Tipo de documento' }}</ion-text>
-            </ion-col>
-            <ion-col>
-              <ion-icon (click)="show = !show" class="icon" style="color: #757575" src="./assets/img/drop-down-arrow.svg"></ion-icon>
-            </ion-col>
-          </ion-row>
-        </ion-grid>
+  <ion-card style="width: 406px; box-shadow: none;margin-top: 26px;">
+    <div style="position: relative; margin-bottom: -1px;" [style]="(show)? 'background-color: rgb(249 249 249)':'background-color: white'">
+      <ion-grid>
+        <ion-row>
+          <ion-col (click)="show = !show">
+            <ion-text  (click)="show = !show" class="tex-document" [style]="(show)? 'font-size: 20px': 'font-size: 18px'">
+              {{ selectedOption ?  selectedOption : 'Tipo de documento' }}</ion-text>
+          </ion-col>
+          <ion-col>
+            <ion-icon (click)="show = !show" class="icon" style="color: #757575" src="./assets/img/drop-down-arrow.svg"></ion-icon>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
 
-        <hr class="hr2">
+      <hr class="hr2">
 
-        <div class="divDni" *ngIf="show" [style]="(show)? 'background-color: rgb(249 249 249)':'background-color: none'">
-          <ion-text class="dni-text" *ngFor="let dni of optionsDni" (click)="selectOption(dni)">
-            {{dni}}
-          </ion-text>
-        </div>
+      <div class="divDni" *ngIf="show" [style]="(show)? 'background-color: rgb(249 249 249)':'background-color: none'">
+        <ion-text class="dni-text" *ngFor="let dni of optionsDni" (click)="selectOption(dni)">
+          {{dni}}
+        </ion-text>
       </div>
-      <form [formGroup]="userForm" (ngSubmit)="continue()">
+    </div>
+    <form [formGroup]="userForm" (ngSubmit)="continue()">
 
       <ion-item style="z-index: 0">
         <ion-label style="color:#AAAAAA; z-index: 0" position="floating">Número de documento</ion-label>
         <ion-input formControlName="documentNumber"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-label style="color:#AAAAAA" position="floating">Fecha de nacimiento</ion-label>
-        <ion-input formControlName="dateBorn"></ion-input>
+        <ion-label style="color: #AAAAAA">Fecha de nacimiento</ion-label>
+        <ion-datetime style="color: #AAAAAA" formControlName="dateBorn" displayFormat="YYYY-MM-DD" cancel-text="Volver"
+                      done-text="Aceptar"
+                      placeholder="Selecciona una Fecha"></ion-datetime>
       </ion-item>
       <ion-item>
-        <ion-label style="color:#AAAAAA" position="floating">Fecha de expedición del documento</ion-label>
-        <ion-input formControlName="dateExpedition"></ion-input>
+        <ion-label style="color: #AAAAAA">Fecha de expedición del documento</ion-label>
+        <ion-datetime style="color: #AAAAAA" formControlName="dateExpedition" displayFormat="YYYY-MM-DD" cancel-text="Volver"
+                      done-text="Aceptar"
+                      hour-values="none"
+                      placeholder="Fecha"></ion-datetime>
       </ion-item>
-      </form>
+    </form>
 
-      <div (click)="show2 = !show2" [style]="(show2)? 'background-color: rgb(249 249 249)':'background-color: white'">
-        <div  style="position: relative; margin-bottom: -1px">
-          <ion-grid>
-            <ion-row>
-              <ion-col (click)="show2 = !show2">
-                <ion-text  (click)="show2 = !show2" class="text-document2" [style]="(show2)? 'font-size: 15px': 'font-size: 15px'">
-                  {{ genderOptions ?  genderOptions : 'Género que aparece en tu documento de identidad' }}</ion-text>
-              </ion-col>
-              <ion-col (click)="show2 = !show2">
-                <ion-icon (click)="show2 = !show2" class="icon2" style="" src="./assets/img/drop-down-arrow.svg"></ion-icon>
-              </ion-col>
-            </ion-row>
-          </ion-grid>
+    <div (click)="show2 = !show2" [style]="(show2)? 'background-color: rgb(249 249 249)':'background-color: white'">
+      <div  style="position: relative; margin-bottom: -1px">
+        <ion-grid>
+          <ion-row>
+            <ion-col (click)="show2 = !show2">
+              <ion-text  (click)="show2 = !show2" class="text-document2" [style]="(show2)? 'font-size: 15px': 'font-size: 15px'">
+                {{ genderOptions ?  genderOptions : 'Género que aparece en tu documento de identidad' }}</ion-text>
+            </ion-col>
+            <ion-col (click)="show2 = !show2">
+              <ion-icon id="arrow" (click)="show2 = !show2" class="icon2" style="" src="./assets/img/drop-down-arrow.svg"></ion-icon>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
 
-          <hr class="hr2">
+        <hr class="hr2">
 
-          <div class="divDni" *ngIf="show2" [style]="(show2)? 'background-color: rgb(249 249 249)':'background-color: none'">
-            <ion-text (click)="show2 = !show2" class="dni-text" *ngFor="let gender of options" (click)="selectedGender(gender)">
-              {{gender}}
-            </ion-text>
-          </div>
+        <div class="divDni" *ngIf="show2" [style]="(show2)? 'background-color: rgb(249 249 249)':'background-color: none'">
+          <ion-text class="dni-text" *ngFor="let gender of options" (click)="selectedGender(gender)">
+            {{gender}}
+          </ion-text>
         </div>
       </div>
+    </div>
 
-      <button class="get-into" (click)="continue()">
-        <span class="get-into-text">Continuar</span>
-      </button>
-    </ion-card>
+    <button [disabled]="userForm.invalid" [ngClass]="(userForm.invalid)? 'get-into3': 'get-into2'" class="get-into" (click)="continue()">
+      <span class="get-into-text">Continuar</span>
+    </button>
+  </ion-card>
 
 
 
