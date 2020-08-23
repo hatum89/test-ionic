@@ -1,0 +1,212 @@
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<ion-card class="card-header">
+
+  <ion-img routerLink="/reg-screen00" class="Back_icon" src="./assets/img/Back_icon.svg"></ion-img>
+  <div class="number-text">NÚMERO DE CELULAR</div>
+  <div class="adjust">
+    <ion-img class="activated-step" src="./assets/img/Paso_activo.svg"></ion-img>
+    <hr class="line">
+    <ion-img class="disabled-step" src="./assets/img/Paso_Desactivo.svg"></ion-img>
+    <hr class="line">
+    <ion-img class="disabled-step" src="./assets/img/Paso_Desactivo.svg"></ion-img>
+    <hr class="line">
+    <ion-img class="disabled-step" src="./assets/img/Paso_Desactivo.svg"></ion-img>
+
+  </div>
+
+
+</ion-card>
+
+<div class="oink-div">
+  <ion-grid style="padding-bottom: 8px">
+    <ion-row>
+      <ion-col  class="col-oink">
+        <ion-img class="oink" src="./assets/img/Oink.svg"></ion-img>
+      </ion-col>
+      <ion-col  class="col-text">
+        <ion-text class="text">Para comenzar, por favor </ion-text>
+        <br>
+        <ion-text class="text">ingresa <strong>tu número celular.</strong> </ion-text>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</div>
+<hr class="line-green">
+
+<ion-card class="card-center">
+  <ion-grid>
+    <ion-row>
+
+      <ion-col style="display: flex; padding-top: 16px">
+        <ion-img class="bandera" src="./assets/img/Bandera@2x.png"></ion-img>
+        <ion-text
+                style="margin-left: 15px;
+                                padding-right: 6px;
+                                font-family: 'Roboto Light', Regular;
+                                font-weight: bold;
+                                margin-top: 2px">+57
+        </ion-text>
+        <span class="span-parentesis">(</span>
+        <ion-grid>
+          <form [formGroup]="form" (ngSubmit)="numAccess()">
+            <div style="display: flex">
+              <div style="width: 50px">
+                <ion-input type="number" [(ngModel)]="number" formControlName="firsNumPart" style="margin-top: -10px;margin-left: 2px;" placeholder=" X X X "></ion-input>
+              </div>
+              <span class="span-parentesis">-</span>
+              <div style="display: flex; width: 110px; margin-left: 3px">
+                <ion-input type="number" [(ngModel)]="number2" formControlName="secondNumPart" style="margin-top: -10px;"  placeholder="  X X X X X X "></ion-input>
+              </div>
+              <div style="margin-left: -16px">
+                <span class="span-parentesis">)</span>
+              </div>
+            </div>
+
+          </form>
+
+        </ion-grid>
+
+
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+
+</ion-card>
+
+<div>
+  <ion-list class="listN1" style="display: flex; justify-content: center; margin-right: -116px;">
+
+    <span class="textNum"><h1 style="margin-left: -128px" (click)="num1()">1</h1></span>
+
+
+    <span class="textNum"><h1 (click)="num2()">2</h1></span>
+
+
+    <span class="textNum"><h1 style="margin-left: 108px" (click)="num3()">3</h1></span>
+
+  </ion-list>
+  <ion-list class="listN1" style="display: flex; justify-content: center; margin-right: -116px;">
+
+    <span class="textNum"><h1 style="margin-left: -128px" (click)="num4()">4</h1></span>
+
+
+
+    <span class="textNum"><h1 (click)="num5()">5</h1></span>
+
+
+    <span class="textNum"><h1 (click)="num6()" style="margin-left: 108px">6</h1></span>
+
+  </ion-list>
+  <ion-list class="listN1" style="display: flex; justify-content: center; margin-right: -116px;">
+
+    <span class="textNum"><h1 (click)="num7()" style="margin-left: -128px">7</h1></span>
+
+
+    <span class="textNum"><h1 (click)="num8()">8</h1></span>
+
+
+    <span class="textNum"><h1 style="margin-left: 108px" (click)="num9()">9</h1></span>
+
+  </ion-list>
+  <ion-list class="listN1" style="display: flex; justify-content: center; margin-right: -116px;">
+    <div style="width: 20px">
+
+      <ion-img style="width: 49px;margin-left: -185px;"
+               src="./assets/img/borrar_teclado.svg"
+               (click)="numEraser()"></ion-img>
+
+    </div>
+
+    <div style="width: 20px">
+      <h1 class="textNum" style="margin-left: -59px;" (click)="num0()">0</h1>
+    </div>
+    <div style="width: 20px">
+
+      <ion-icon class="imgCheck"
+                src="./assets/img/Check_unable.svg"
+                (click)="numAccess()">
+      </ion-icon>
+
+    </div>
+
+  </ion-list>
+
+</div>
+
+
+
+
+
+
+<!--------------------------------------------------------------------------------------->
+<div class="w3-container">
+
+  <button id="modal1" onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black">Fade In Modal</button>
+
+  <div id="id01" class="w3-modal w3-animate-opacity" >
+    <div class="w3-modal-content w3-card-4"
+         style="margin-top: 275px;width: 319px !important; height: 165px; margin-left: 48px; border-radius: 4px">
+      <div>
+
+        <div class="w3-container" style="padding-top: 14px;">
+          <span style="color: #F44336; font-size: 20px; padding: 22px; margin-left: -29px">Error</span><br>
+
+          <div style="padding-top: 8px">
+            <ion-text>El número <strong>{{number}}-{{number2}}</strong> ya </ion-text>
+            <ion-text>está <br>asociado a otro usuario.</ion-text>
+          </div>
+
+        </div>
+        <div class="w3-container">
+          <ion-text style="color: #004B40; margin-left: 198px; margin-bottom: 30px; font-weight: bold;"
+                    onclick="document.getElementById('id01').style.display='none'"
+                    (click)="sure()">VOLVER</ion-text>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--------------------------------------------------------------------------------------->
+<div class="w3-container">
+
+  <button id="modal" onclick="document.getElementById('id0').style.display='block'" class="w3-button w3-black">Fade In Modal</button>
+
+  <div id="id0" class="w3-modal w3-animate-opacity" >
+    <div class="w3-modal-content w3-card-4"
+         style="margin-top: 275px;width: 319px !important; height: 165px; margin-left: 48px; border-radius: 4px">
+      <div>
+
+        <div class="w3-container" style="padding-top: 14px;">
+          <span style="color: #004B40; font-size: 20px; padding: 22px; margin-left: -29px">¿Estas seguro?</span><br>
+
+          <div style="padding-top: 8px">
+            <ion-text>Si cancelas la verificación,</ion-text><br>
+            <ion-text>tu progreso se perderá y tendrás que</ion-text><br>
+            <ion-text>Volver a empezar</ion-text>
+          </div>
+
+        </div>
+        <ion-grid>
+          <ion-row style="display: flex; flex-direction: column">
+            <ion-col style="margin-left: -27px">
+              <ion-text style="color: #004B40; margin-left: 198px; margin-bottom: 30px; font-weight: bold;"
+                        onclick="document.getElementById('id0').style.display='none'">NO</ion-text>
+            </ion-col>
+            <ion-col style="margin-left: 20px">
+              <ion-text style="color: #F44336; margin-left: 198px; margin-bottom: 30px; font-weight: bold;"
+                        onclick="document.getElementById('id0').style.display='none'"
+                        (click)="cancel()"
+              >CANCELAR</ion-text>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+
+
+
+      </div>
+    </div>
+  </div>
+</div>

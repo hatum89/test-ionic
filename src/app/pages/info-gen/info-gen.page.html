@@ -1,0 +1,119 @@
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<ion-card class="card-header">
+
+  <ion-img routerLink="/cod-verif" class="Back_icon" src="./assets/img/Back_icon.svg"></ion-img>
+  <div class="number-text">DATOS DE TU CUENTA</div>
+  <div class="adjust">
+    <ion-img class="disabled-step" src="./assets/img/Paso_Desactivo.svg"></ion-img>
+    <hr class="line">
+    <div style="margin-left: -65px;">
+      <ion-img class="activated-step" src="./assets/img/Paso_activo.svg"></ion-img>
+    </div>
+    <hr class="line">
+    <ion-img class="disabled-step" src="./assets/img/Paso_Desactivo.svg"></ion-img>
+    <hr class="line">
+    <ion-img class="disabled-step" src="./assets/img/Paso_Desactivo.svg"></ion-img>
+
+  </div>
+
+
+</ion-card>
+
+<div class="oink-div">
+  <ion-grid style="padding-bottom: 8px">
+    <ion-row>
+      <ion-col  class="col-oink">
+        <ion-img class="oink" src="./assets/img/Oink-M.svg"></ion-img>
+      </ion-col>
+      <ion-col  class="col-text">
+        <ion-text class="textDato">¿CUALES SON TUS DATOS?</ion-text>
+        <br>
+        <div style="margin-top: 9px">
+          <ion-text class="text">Ahora necesitamos saber algunos datos tuyos </ion-text>
+        </div>
+      </ion-col>
+    </ion-row>
+    <hr class="line-green">
+  </ion-grid>
+</div>
+<ion-content>
+
+  <form [formGroup]="user" (ngSubmit)="continue()">
+    <ion-card style="width: 406px; box-shadow: none">
+
+<ion-item >
+    <div class="div-select" [style]="(show)? 'height: 38px': 'height: 121px'">
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-text (click)="show =! show" class="tex-document" [style]="(show)? 'font-size: 16px': 'font-size: 20px'">
+              {{ selectedOption ?  selectedOption : 'Tipo de documento' }}</ion-text>
+          </ion-col>
+          <ion-col style="margin-top: -22px;margin-right: 33px; margin-left: -2px;" (click)="show =! show">
+            <ion-icon class="icon" style="color: #757575" src="./assets/img/drop-down-arrow.svg"></ion-icon>
+          </ion-col>
+        </ion-row>
+        <hr [hidden]="show" style="background-color: #B6B6B6; width:400px; height: 1px">
+      </ion-grid>
+
+      <div style="display: flex; flex-direction: column;margin-left: 16px;margin-top: 10px;">
+        <ion-text class="dni-text" *ngFor="let dni of optionsDni" (click)="selectOption(dni)">
+          {{dni}}
+        </ion-text>
+      </div>
+    </div>
+
+  </ion-item>
+    <ion-item>
+      <ion-label style="color:#AAAAAA" position="floating">Número de documento</ion-label>
+      <ion-input formControlName="documentNumber"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label style="color:#AAAAAA" position="floating">Fecha de nacimiento</ion-label>
+      <ion-input formControlName="dateBorn"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label style="color:#AAAAAA" position="floating">Fecha de expedición del documento</ion-label>
+      <ion-input formControlName="dateExpedition"></ion-input>
+    </ion-item>
+
+
+    <app-select></app-select>
+
+
+    <div class="get-into" (click)="continue()">
+      <span class="get-into-text">Continuar</span>
+    </div>
+    </ion-card>
+  </form>
+
+
+</ion-content >
+
+<div class="w3-container">
+
+  <button id="modal1" onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black">Fade In Modal</button>
+
+  <div id="id01" class="w3-modal w3-animate-opacity" >
+    <div class="w3-modal-content w3-card-4"
+         style="margin-top: 275px;width: 319px !important; height: 165px; margin-left: 48px; border-radius: 4px">
+      <div>
+
+        <div class="w3-container" style="padding-top: 14px;">
+          <span style="color: #F44336; font-size: 20px; padding: 22px; margin-left: -29px">Error</span><br>
+
+          <div style="padding-top: 8px">
+            <ion-text>El numero de documento <strong>80186587</strong> ya </ion-text>
+            <ion-text>está asociado a otro usuario.</ion-text>
+          </div>
+
+        </div>
+        <div class="w3-container">
+          <ion-text style="color: #004B40; margin-left: 198px; margin-bottom: 30px; font-weight: bold;"
+                    onclick="document.getElementById('id01').style.display='none'"
+                    >VOLVER</ion-text>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

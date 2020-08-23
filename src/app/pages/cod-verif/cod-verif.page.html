@@ -1,0 +1,120 @@
+<ion-card class="card-header">
+
+  <ion-img routerLink="/reg-num-cel" class="Back_icon" src="./assets/img/Back_icon.svg"></ion-img>
+  <div class="number-text">NÚMERO DE CELULAR</div>
+  <div class="adjust">
+    <ion-img class="activated-step" src="./assets/img/Paso_activo.svg"></ion-img>
+    <hr class="line">
+    <ion-img class="disabled-step" src="./assets/img/Paso_Desactivo.svg"></ion-img>
+    <hr class="line">
+    <ion-img class="disabled-step" src="./assets/img/Paso_Desactivo.svg"></ion-img>
+    <hr class="line">
+    <ion-img class="disabled-step" src="./assets/img/Paso_Desactivo.svg"></ion-img>
+
+  </div>
+
+
+</ion-card>
+
+<div class="oink-div">
+  <ion-grid style="padding-bottom: 8px">
+    <ion-row>
+      <ion-col  class="col-oink">
+        <ion-img class="oink" src="./assets/img/Oink.svg"></ion-img>
+      </ion-col>
+      <ion-col  class="col-text">
+
+        <ion-text class="text"> Digita el código que recibiste vía </ion-text>
+        <br>
+        <ion-text class="text"><strong>mensaje de texto</strong> al 310-238-8974</ion-text>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</div>
+<hr class="line-green">
+
+
+<ion-card class="card-center" style="margin-top: 20px">
+  <form [formGroup]="form" (ngSubmit)="numAccess()">
+      <div style="display: flex; width: 100px; margin-left: 162px;">
+        <ion-input [(ngModel)]="number" formControlName="firsNumPart" class="styleX" style="margin-right: -90px;" placeholder="X">
+        </ion-input>
+        <ion-input [(ngModel)]="number2" formControlName="secondNumPart" class="styleX" style="margin-right: -90px;" placeholder="X">
+        </ion-input>
+        <ion-input [(ngModel)]="number3" formControlName="thirdNumPart" class="styleX" style="margin-right: -90px;" placeholder="X">
+        </ion-input>
+        <ion-input [(ngModel)]="number4" formControlName="quarterNumPart" class="styleX" style="margin-right: -90px;" placeholder="X">
+        </ion-input>
+      </div>
+  </form>
+</ion-card>
+<div style="display: flex; justify-content: center">
+
+
+<div>
+  <ion-img class="reenviar" src="./assets/img/Reenviar_icon.svg"></ion-img>
+
+</div>
+<div>
+  <span style="color: #a7a7a7; font-size: 14px">Enviarme el código nuevamente</span>
+</div>
+</div>
+<div>
+  <ion-list class="listN1" style="display: flex; justify-content: center; margin-right: -116px;">
+
+    <span class="textNum"><h1 style="margin-left: -128px" (click)="num1()">1</h1></span>
+
+
+    <span class="textNum"><h1 (click)="num2()">2</h1></span>
+
+
+    <span class="textNum"><h1 style="margin-left: 108px" (click)="num3()">3</h1></span>
+
+  </ion-list>
+  <ion-list class="listN1" style="display: flex; justify-content: center; margin-right: -116px;">
+
+    <span class="textNum"><h1 style="margin-left: -128px" (click)="num4()">4</h1></span>
+
+
+
+    <span class="textNum"><h1 (click)="num5()">5</h1></span>
+
+
+    <span class="textNum"><h1 (click)="num6()" style="margin-left: 108px">6</h1></span>
+
+  </ion-list>
+  <ion-list class="listN1" style="display: flex; justify-content: center; margin-right: -116px;">
+
+    <span class="textNum"><h1 (click)="num7()" style="margin-left: -128px">7</h1></span>
+
+
+    <span class="textNum"><h1 (click)="num8()">8</h1></span>
+
+
+    <span class="textNum"><h1 style="margin-left: 108px" (click)="num9()">9</h1></span>
+
+  </ion-list>
+  <ion-list class="listN1" style="display: flex; justify-content: center; margin-right: -116px;">
+    <div style="width: 20px">
+
+      <ion-img style="width: 49px;margin-left: -185px;"
+               src="./assets/img/borrar_teclado.svg"
+               (click)="numEraser()"></ion-img>
+
+    </div>
+
+    <div style="width: 20px">
+      <h1 class="textNum" style="margin-left: -59px;" (click)="num0()">0</h1>
+    </div>
+    <div style="width: 20px">
+
+      <ion-icon class="imgCheck" [style]="(form.get('quarterNumPart').value >= 1 )? 'color:#1EEA00': 'color:#AAAAAA'"
+                src="./assets/img/Check_unable.svg"
+                (click)="numAccess()">
+      </ion-icon>
+
+    </div>
+
+  </ion-list>
+
+</div>

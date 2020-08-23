@@ -1,6 +1,4 @@
 
-
-
 export class InfoModels {
 
     private phone_number: number;

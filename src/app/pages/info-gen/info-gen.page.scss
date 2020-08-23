@@ -1,0 +1,260 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+
+
+.Back_icon {
+  width: 13.32px;
+  height: 21.6px;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+.card-header {
+  height: 88px;
+  border-radius: 0px;
+  -webkit-box-shadow: -1px 10px 5px 4px #E5E5E5;
+  -moz-box-shadow: -1px 10px 5px 4px #E5E5E5;
+  box-shadow: -1px 10px 5px 4px rgba#E5E5E5;
+  background-color: #FAFAFA;
+}
+.number-text {
+  font-family:'Montserrat', Medium;
+  color: var(--ion-color-darkGreen);
+  font-size: 16px;
+  font-weight: lighter;
+  text-align: center;
+  margin-top: -20px;
+}
+
+.activated-step {
+  width: 156px;
+  height: 19px;
+  margin-top: 16px;
+
+}
+.disabled-step {
+  width: 156px;
+  height: 19px;
+  margin-top: 16px;
+  margin-left: -62px;
+}
+.line {
+  width: 54px;
+  height: 1px;
+  margin-top: 25px;
+  margin-left: -62px;
+  background: #D3D3D3;
+}
+.adjust {
+  display: flex;
+  margin-left: 63px;
+}
+.ion-content {
+  margin-top: 20px;
+}
+.oink {
+  width: 75.67px;
+  height: 66.94px;
+  margin-left: 40px;
+}
+.oink-div {
+  display: flex;
+  margin-top: 40px;
+}
+.col-text {
+  margin-top: -3px;
+  margin-left: -146px;
+}
+.text {
+  font-family: "Avenir Next LT Pro";
+  color: #aaaaaa;
+}
+.line-green {
+  width:  379px;
+  height: 2px;
+  background-color: var(--ion-color-ligthGreen);
+  margin-left: 18px;
+  margin-top: 30px;
+}
+
+.textDato {
+  color: var(--ion-color-darkGreen);
+  font-weight: bold;
+}
+
+.dropdown {
+  width: 480px;
+  position: relative;
+  margin-top: 20px
+}
+.dropdown-select {
+  padding: 24px;
+  width: 100%;
+  display: flex;
+}
+.icon {
+  margin-left: 359px;
+  font-size: 14px;
+}
+.dropdown-list {
+  visibility: visible;
+  transition: opacity 0.2s linear, visibility 0.2s linear;
+  font-size: 16px;
+  margin-top: 14px;
+}
+
+.dropdown_item {
+  color: #7d7d7d;
+  margin-left: 32px;
+}
+.get-into-text {
+  font-family: 'Montserrat', Medium;
+  margin-top: 13px;
+  font-size: 25px;
+  color: #004B40;
+}
+.get-into {
+  display: flex;
+  justify-content: center;
+  margin-top: 6px;
+  margin-left: 13px;
+  background-color: var(--ion-color-ligthGreen);
+  border-radius: 40px 40px 40px 40px;
+  width: 388px;
+  height: 55px;
+}
+
+//------------------------------------------------------------------------------
+
+.div-select {
+  width: 100%;
+  margin-top: 24px;
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
+.tex-document {
+  color: #aaaaaa;
+  cursor: pointer;
+}
+.dni-text {
+  color: #b6b6b6;
+  margin-top: 4px;
+}
+.dni-text:hover {
+  background-color: #EEEEEE;
+}
+//------------------------------------------------------------------------------
+
+.select-main-container {
+  width: 300px;
+  height: 24px;
+  background-color: white;
+  position: relative;
+  padding: 11.05px 11.53px;
+  transition: all 0.1s ease-in-out;
+  overflow-y: hidden;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.expanded-select {
+  -webkit-box-shadow: 0;
+  -moz-box-shadow: 0;
+  box-shadow: 0;
+}
+
+.select-options {
+  width: 300px;
+  background-color: white;
+  position: absolute;
+  padding: 0 11.53px;
+  transition: all 0.1s ease-in-out;
+  overflow-x: hidden;
+  cursor: pointer;
+  opacity: 0;
+  z-index: 2;
+}
+
+.shadow {
+  width: 322px;
+  height: 46px;
+  background-color: white;
+  position: absolute;
+  -webkit-box-shadow: 0px 1px 3px 2px rgba(0,0,0,0.41);
+  -moz-box-shadow: 0px 1px 3px 2px rgba(0,0,0,0.41);
+  box-shadow: 0px 1px 3px 2px rgba(0,0,0,0.41);
+  top: 8px;
+  left: 9px;
+  z-index: 1;
+}
+
+.shadow-selected {
+  height: 110px;
+}
+
+.options-selected {
+  opacity: 1;
+
+}
+
+.options-selected::before {
+  content: "";
+  height: 15px;
+  width: 100%;
+  position: absolute;
+  top: -15px;
+  background: inherit;
+  left: 0px;
+}
+
+.bottom-line {
+  height: 2px;
+  background-color: #000000;
+  opacity: 0.1;
+  width: 100%;
+  margin-bottom: 12px;
+}
+
+.option {
+  height: 32px;
+  width: 110%;
+  display: flex;
+  align-items: center;
+  position: relative;
+  right: 5%;
+  padding-left: 5%;
+}
+
+.option:hover {
+  background-color: #eeeeee;
+}
+
+.selected-option {
+  background-color: #eeeeee;
+}
+
+
+.select-text {
+  margin: 0 auto 4px 0;
+  color: #aaaaaa;
+  font-family: 'avenir-next-lt-pro-regular';
+  font-size: 16px;
+  text-align: left;
+  font-weight: 400;
+  opacity: 0.8;
+}
+
+.option-text {
+  margin: 0;
+  color: #000000;
+  font-family: 'avenir-next-lt-pro-regular';
+  font-size: 16px;
+  text-align: left;
+  font-weight: 400;
+}
+
+.w3-modal-content .w3-card-2 {
+  max-width: 22% !important;
+}

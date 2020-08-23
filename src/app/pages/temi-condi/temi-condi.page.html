@@ -1,0 +1,110 @@
+<ion-card class="card-header">
+
+  <ion-img routerLink="/verifi-datos" class="Back_icon" src="./assets/img/Back_icon.svg"></ion-img>
+  <div class="number-text">SEGURIDAD</div>
+  <div class="adjust">
+    <ion-img class="disabled-step" src="./assets/img/Paso_Desactivo.svg"></ion-img>
+    <hr class="line">
+    <ion-img class="disabled-step" src="./assets/img/Paso_Desactivo.svg"></ion-img>
+    <hr class="line">
+    <ion-img class="disabled-step" src="./assets/img/Paso_Desactivo.svg"></ion-img>
+    <hr class="line">
+    <div style="margin-left: -65px;">
+      <ion-img class="activated-step" src="./assets/img/Paso_activo.svg"></ion-img>
+    </div>
+
+
+  </div>
+
+
+</ion-card>
+
+<div class="oink-div">
+  <ion-grid style="padding-bottom: 8px">
+    <ion-row>
+      <ion-col  class="col-oink">
+        <ion-img class="oink" src="./assets/img/OinkPolicia.svg"></ion-img>
+      </ion-col>
+      <ion-col  class="col-text">
+        <ion-text class="textDato">CONFIGURA TU CUENTA</ion-text>
+        <br>
+        <div style="margin-top: 9px">
+          <ion-text class="text">Para finalizar, por favor</ion-text><span class="textDato"> lee con </span>
+          <br>
+          <ion-text class="textDato">detenimiento este documento</ion-text>
+        </div>
+      </ion-col>
+    </ion-row>
+    <hr class="line-green">
+  </ion-grid>
+</div>
+<ion-content>
+  <div style=" color: #707070; margin-left: 30px; margin-top: 30px">
+      <div>
+
+        Quid turpius quam sapientis vitam ex<br>
+        insipientium sermone pendere? Haeret in<br>
+        salebra. Nonne igitur tibi videntur, inquit, mala?<br>
+        Istam voluptatem, inquit, Epicurus ignorat?<br>
+        Quod autem satis est, eo quicquid accessit,<br>
+        nimium est; Sed tu istuc dixti bene Latine, parum<br>
+        plane. Sed emolumenta communia esse<br>
+        dicuntur, recte autem facta et peccata non<br>
+        habentur communia. Scio enim esse quosdam,<br>
+        qui quavis lingua philosophari possint.<br>
+
+      </div>
+      <div style="margin-top: 21px">
+        1. Primum cur ista res digna odio est, nisi qu.<br>
+        2. Ergo ita: non posse honeste vivi, nisi honest.<br>
+        3. De illis, cum volemus.<br>
+        4. Rec tamen ullo modo summum pecudis bon.<br>
+
+      </div>
+
+      <div style="margin-top: 21px">
+        Sed vos squalidius,
+      </div>
+
+      <div style="margin-top: 21px">
+
+        • Eadem nunc mea adversum te oratio est.<br>
+        • Sed tamenoccurrent, non fugiam ista popularia.<br>
+        • Hanc ergo intuens illud quasi signum absolvere.<br>
+        • Miseruum malum est, dici aliter non potest.<br>
+      </div>
+      <div style="margin-top: 21px">
+        Istam voluptatem, inquit, Epicurus ignorat?<br>
+        Certe nihil nisi quod possit ipsum propter se iure<br>
+        laudari. Ne in odium veniam, si amicum<br>
+        destitero tueri. Bestiarum vero nullum iudicium<br>
+        puto. Tum Torquatus: Prorsus, inquit, assentior;<br>
+        Tu quidem reddes; Sed nimis multa. Praeteritis,<br>
+        inquit, gaudeo. Sed vos squalidius, illorum vides<br>
+        quam niteat oratio. An me, inquam, nisi te<br>
+        audire vellem, censes haec dicturum fuisse?<br>
+      </div>
+      <div style="margin-top: 21px">
+        Propter se iure laudari. Ne in odium veniam, si<br>
+        amicum destitero tueri. Bestiarum vero nullum<br>
+        iudicium puto. Tum Torquatus: Prorsus, inquit.<br>
+      </div>
+    <div style="margin-top: 106px; color: #404040; display: flex; font-family: Montserrat">
+      He leído, entendido y aceptado estos <br> términos y condiciones
+      <div style="margin-left: 50px">
+        <ion-icon (click)="access =! access"
+                  [style]="(access)? 'color: #1EEA00':'color: #878787'"
+                  class="icon-check" src="./assets/img/comprobar.svg"></ion-icon>
+      </div>
+    </div>
+    <button [disabled]="!access" class="get-into" (click)="continue()">
+      <span class="get-into-text">Aceptar y finalizar</span>
+    </button>
+
+  </div>
+
+<div style="height: 30px">
+
+</div>
+
+</ion-content>

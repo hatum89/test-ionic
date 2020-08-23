@@ -11,7 +11,7 @@ import {VerifyDirectLoginService} from '../../services/verify-direct-login.servi
 })
 export class HomePage {
 
-  constructor( public nav: NavController,
+  constructor( private nav: NavController,
                private verifyDirectLoginService: VerifyDirectLoginService) {
     this.verifyDirectLoginService.getLogin();
     setTimeout (() => {

@@ -31,7 +31,7 @@
   width: 156px;
   height: 19px;
   margin-top: 16px;
-  margin-left: -20px;
+
 }
 .disabled-step {
   width: 156px;
@@ -48,7 +48,7 @@
 }
 .adjust {
   display: flex;
-  margin-left: 20px;
+  margin-left: 63px;
 }
 .ion-content {
   margin-top: 20px;
@@ -60,15 +60,15 @@
 }
 .oink-div {
   display: flex;
-  margin-top: 60px;
+  margin-top: 40px;
 }
 .col-text {
-  margin-top: 14px;
+  margin-top: -3px;
   margin-left: -146px;
 }
 .text {
   font-family: "Avenir Next LT Pro";
-  color: #757575;
+  color: #aaaaaa;
 }
 .line-green {
   width:  379px;
@@ -77,24 +77,65 @@
   margin-left: 18px;
   margin-top: 30px;
 }
-.card-center {
-  margin: 40px 0px;
-  padding-bottom: 8px;
-  background-color: #FAFAFA;
-}
-.bandera {
-  width: 25.62px;
-  height: 17.15px;
-  margin-left: 90px;
-}
-.span-parentesis {
-  color: #AAAAAA;
-}
-.textNum {
-  font-family:'Montserrat', Regular;
-  color: #004B40;
-}
-.listN1 {
-  padding: 25px;
+
+.textDato {
+  color: var(--ion-color-darkGreen);
+  font-weight: bold;
 }
 
+.dropdown {
+  width: 480px;
+  position: relative;
+}
+.dropdown-select {
+  padding: 24px;
+  width: 100%;
+  display: flex;
+}
+.icon {
+  margin-left: 227px;
+}
+.dropdown-list {
+  visibility: hidden;
+  transition: opacity 0.2s linear, visibility 0.2s linear;
+}
+.dropdown-list:active {
+  color: #EEEEEE;
+}
+.dropdown_item {
+  color: #4D4D4D;
+  margin-left: 32px;
+}
+.get-into-text {
+  font-family: 'Montserrat', Medium;
+  margin-top: 12px;
+  font-size: 21px;
+  color: #004B40;
+}
+.get-into {
+  display: flex;
+  justify-content: center;
+  margin-top: 6px;
+  margin-left: 13px;
+  background-color: var(--ion-color-ligthGreen);
+  border-radius: 40px 40px 40px 40px;
+  width: 169px;
+  height: 54px;
+}
+.get-out-text {
+  background-color: #F44336;
+  display: flex;
+  justify-content: center;
+  margin-top: -6px;
+  margin-left: 13px;
+  border-radius: 40px 40px 40px 40px;
+  width: 169px;
+  height: 54px;
+  padding-top: 12px;
+}
+.get-into-out {
+  font-family: 'Montserrat', Medium;
+  margin-top: 12px;
+  font-size: 21px;
+  color: #ffffff;
+}

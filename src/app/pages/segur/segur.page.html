@@ -1,0 +1,66 @@
+<ion-card class="card-header">
+
+  <ion-img routerLink="/verifi-datos" class="Back_icon" src="./assets/img/Back_icon.svg"></ion-img>
+  <div class="number-text">SEGURIDAD</div>
+  <div class="adjust">
+    <ion-img class="disabled-step" src="./assets/img/Paso_Desactivo.svg"></ion-img>
+    <hr class="line">
+    <ion-img class="disabled-step" src="./assets/img/Paso_Desactivo.svg"></ion-img>
+    <hr class="line">
+    <div style="margin-left: -65px;">
+      <ion-img class="activated-step" src="./assets/img/Paso_activo.svg"></ion-img>
+    </div>
+    <hr class="line">
+    <ion-img class="disabled-step" src="./assets/img/Paso_Desactivo.svg"></ion-img>
+
+  </div>
+
+
+</ion-card>
+
+<div class="oink-div">
+  <ion-grid style="padding-bottom: 8px">
+    <ion-row>
+      <ion-col  class="col-oink">
+        <ion-img class="oink" src="./assets/img/OinkPolicia.svg"></ion-img>
+      </ion-col>
+      <ion-col  class="col-text">
+        <ion-text class="textDato">CONFIGURA TU CUENTA</ion-text>
+        <br>
+        <div style="margin-top: 9px">
+          <ion-text class="text">Escribe el correo que estará </ion-text>
+          <br>
+          <ion-text class="text">vinculado a tu cuenta y crea un PIN de seguridad</ion-text>
+        </div>
+      </ion-col>
+    </ion-row>
+    <hr class="line-green">
+  </ion-grid>
+</div>
+<ion-content>
+  <form [formGroup]="user" (ngSubmit)="continue()">
+    <ion-item>
+      <ion-label style="color:#AAAAAA" position="floating">Correo electronico</ion-label>
+      <ion-input style="color: #004B40"  formControlName="email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label style="color:#AAAAAA" position="floating">Confirmar correo electronico</ion-label>
+      <ion-input style="color: #004B40" formControlName="confirmEmail"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label style="color:#AAAAAA" position="floating">Pin de seguridad</ion-label>
+      <ion-input style="color: #004B40"  formControlName="pin"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label style="color:#AAAAAA" position="floating">Confirmar Pin de seguridad</ion-label>
+      <ion-input style="color: #004B40"  formControlName="confirmPin"></ion-input>
+    </ion-item>
+
+      <div class="get-into" (click)="continue()">
+        <span class="get-into-text">Siguiente</span>
+      </div>
+
+
+  </form>
+
+</ion-content>

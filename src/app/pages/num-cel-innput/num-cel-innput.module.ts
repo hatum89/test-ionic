@@ -4,9 +4,9 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { RegNumCelPageRoutingModule } from './reg-num-cel-routing.module';
+import { NumCelInnputPageRoutingModule } from './num-cel-innput-routing.module';
 
-import { RegNumCelPage } from './reg-num-cel.page';
+import { NumCelInnputPage } from './num-cel-innput.page';
 import {RegNumComponentPageModule} from '../../components/reg-num-component/reg-num-component.module';
 
 @NgModule({
@@ -14,10 +14,10 @@ import {RegNumComponentPageModule} from '../../components/reg-num-component/reg-
         CommonModule,
         FormsModule,
         IonicModule,
-        RegNumCelPageRoutingModule,
-        ReactiveFormsModule,
-        RegNumComponentPageModule
+        NumCelInnputPageRoutingModule,
+        RegNumComponentPageModule,
+        ReactiveFormsModule
     ],
-  declarations: [RegNumCelPage]
+  declarations: [NumCelInnputPage]
 })
-export class RegNumCelPageModule {}
+export class NumCelInnputPageModule {}
